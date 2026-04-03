@@ -1,21 +1,28 @@
 # Ninjabbles 🥷🫧
 
-**Ninjabbles** is an action-packed mobile game where precision meets agility. Navigate through challenging levels, utilize ninja skills, and master the mechanics of the "bubbles" to achieve high scores.
+**Ninjabbles** is a single-player mobile puzzle game developed using Godot, designed to introduce beginners to fundamental programming concepts. The game focuses on teaching **functional logic** through an interactive and engaging learning experience.
 
-## 🚀 Features
-* **Fast-paced Gameplay:** Experience smooth controls and fluid animations.
-* **Unique Mechanics:** Innovative "bubble" interaction system.
-* **Challenging Levels:** Handcrafted stages designed to test your reflexes.
-* **Sleek Graphics:** Clean, vibrant visual style optimized for mobile devices.
+## 🎯 Educational Focus
+Unlike traditional games, **Ninjabbles** bridges the gap between gaming and computer science:
+* **Core Concept:** Mastery of **functions**—learning to encapsulate sequences of actions into reusable blocks.
+* **Logic Building:** Players use a **drag-and-drop interface** to organize code blocks.
+* **Problem Solving:** Commands include `Move Forward`, `Rotate Left/Right`, and calling predefined functions to navigate complex puzzles efficiently.
 
-## 🛠️ Tech Stack
-* **Game Engine:** Godot (GDScript)
-* **Platform:** Android / iOS
-* **Version Control:** Git & GitHub
+## 🚀 Key Features
+* **Visual Programming:** Intuitive block-based logic perfect for novice learners.
+* **Progressive Difficulty:** Levels designed to challenge the player’s ability to optimize code.
+* **Mobile Optimized:** Built specifically for a seamless touch experience on mobile devices.
+* **Real-time Execution:** Watch your "code" play out instantly in the game world.
+
+## 🛠️ Technical Stack
+* **Engine:** Godot 4.x
+* **Scripting:** GDScript
+* **Platform:** Android (Mobile)
+* **Architecture:** Modular scene-based design for puzzle elements.
 
 ## 📂 Project Structure
 ```text
-├── assets/          # Sprites, Sounds, and Fonts
-├── scenes/          # Game levels and UI screens
-├── scripts/         # Logic for player, enemies, and mechanics
-└── project.godot    # Godot project configuration
+├── assets/          # Sprites, UI Themes, and Audio
+├── scenes/          # Logic-building UI and Puzzle Levels
+├── scripts/         # Drag-and-drop system & Command execution logic
+└── project.godot    # Godot configuration file
