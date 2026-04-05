@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c6wceuafycaaa" path="res://asset/sprites/world_tileset.png" id="2_iwwbg"]
 [ext_resource type="Texture2D" uid="uid://b5l8jc80723fb" path="res://asset/others/360_F_986546394_d3jsxWIbjIcANAs4evAM6x9QsC5n2EVS.jpg" id="3_4ekvf"]
 [ext_resource type="Texture2D" uid="uid://ci12daysnbrob" path="res://asset/others/8-bit-scroll-medieval-parchment-vector-52841144-removebg-preview 4.png" id="5_wlpcy"]
+[ext_resource type="Script" uid="uid://dsat678sfnyjj" path="res://scene/block_editor.gd" id="6_3d84v"]
 [ext_resource type="PackedScene" uid="uid://c01l7y0eqi4l5" path="res://scene/code_block.tscn" id="6_nodk0"]
 [ext_resource type="Script" uid="uid://1ce37dqiver7" path="res://scripts/drop_area.gd" id="7_0ej4q"]
 
@@ -226,6 +227,7 @@ offset_bottom = 260.6875
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_4ekvf")
+script = ExtResource("6_3d84v")
 
 [node name="CloseEditorButton" type="Button" parent="CanvasLayer/BlockEditor" unique_id=564440610]
 layout_mode = 1
@@ -249,30 +251,13 @@ offset_right = 307.0
 offset_bottom = -49.6875
 grow_vertical = 2
 
-[node name="CodeBlock" parent="CanvasLayer/BlockEditor/BlockList" unique_id=1015479147 instance=ExtResource("6_nodk0")]
+[node name="Panel" parent="CanvasLayer/BlockEditor/BlockList" unique_id=1015479147 instance=ExtResource("6_nodk0")]
 layout_mode = 2
-block_text = "Move right"
-
-[node name="CodeBlock2" parent="CanvasLayer/BlockEditor/BlockList" unique_id=438589352 instance=ExtResource("6_nodk0")]
-layout_mode = 2
-block_text = "Move left"
-
-[node name="CodeBlock3" parent="CanvasLayer/BlockEditor/BlockList" unique_id=2035493564 instance=ExtResource("6_nodk0")]
-layout_mode = 2
-block_text = "Jump"
 
 [node name="DropArea" type="VBoxContainer" parent="CanvasLayer/BlockEditor" unique_id=744747510]
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -567.0
-offset_top = 57.6875
-offset_right = -83.0
-offset_bottom = -53.6875
-grow_horizontal = 0
-grow_vertical = 2
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 script = ExtResource("7_0ej4q")
 
 [connection signal="pressed" from="CanvasLayer/BlockEditor/CloseEditorButton" to="." method="_on_button_pressed"]

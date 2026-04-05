@@ -262,17 +262,9 @@ layout_mode = 2
 block_text = "Jump"
 
 [node name="DropArea" type="VBoxContainer" parent="CanvasLayer/BlockEditor" unique_id=744747510]
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -567.0
-offset_top = 57.6875
-offset_right = -83.0
-offset_bottom = -53.6875
-grow_horizontal = 0
-grow_vertical = 2
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 script = ExtResource("7_0ej4q")
 
 [connection signal="pressed" from="CanvasLayer/BlockEditor/CloseEditorButton" to="." method="_on_button_pressed"]
