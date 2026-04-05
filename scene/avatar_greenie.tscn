@@ -23,9 +23,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ufusc"]
-size = Vector2(18, 21)
+size = Vector2(17.769232, 21.615385)
 
 [node name="avatar_greenie" type="CharacterBody2D" unique_id=243584308]
+scale = Vector2(0.65, 0.65)
 input_pickable = true
 script = ExtResource("1_ufusc")
 
@@ -38,5 +39,5 @@ autoplay = "idle"
 frame_progress = 0.98847806
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1645080479]
-position = Vector2(-2, -13.5)
+position = Vector2(-1.8846164, -13.807695)
 shape = SubResource("RectangleShape2D_ufusc")

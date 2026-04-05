@@ -10,9 +10,14 @@ func drop_data(position, data):
 	# Reset position so VBoxContainer can lay it out
 	block.position = Vector2.ZERO
 
-func _get_insert_index(y: float) -> int:
-	for i in get_child_count():
-		var child = get_child(i)
-		if y < child.position.y + child.size.y * 0.5:
-			return i
-	return get_child_count()
+func get_commands() -> Array[String]:
+	var commands: Array[String] = []
+	for child in get_children():
+		commands.append(child.block_text)
+	return commands
+#func _get_insert_index(y: float) -> int:
+	#for i in get_child_count():
+		#var child = get_child(i)
+		#if y < child.position.y + child.size.y * 0.5:
+			#return i
+	#return get_child_count()

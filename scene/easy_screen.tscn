@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c6wceuafycaaa" path="res://asset/sprites/world_tileset.png" id="2_iwwbg"]
 [ext_resource type="Texture2D" uid="uid://b5l8jc80723fb" path="res://asset/others/360_F_986546394_d3jsxWIbjIcANAs4evAM6x9QsC5n2EVS.jpg" id="3_4ekvf"]
 [ext_resource type="Texture2D" uid="uid://ci12daysnbrob" path="res://asset/others/8-bit-scroll-medieval-parchment-vector-52841144-removebg-preview 4.png" id="5_wlpcy"]
+[ext_resource type="Script" uid="uid://dp78yxcki228b" path="res://scripts/block_editor.gd" id="6_3d84v"]
 [ext_resource type="PackedScene" uid="uid://c01l7y0eqi4l5" path="res://scene/code_block.tscn" id="6_nodk0"]
 [ext_resource type="Script" uid="uid://1ce37dqiver7" path="res://scripts/drop_area.gd" id="7_0ej4q"]
 
@@ -204,7 +205,7 @@ format = 2
 layer_0/tile_data = PackedInt32Array(0, 0, 0, 1, 0, 0, 65535, 0, 0, 2, 0, 0, -65533, 0, 0, -65532, 0, 0, 3, 65536, 0, 4, 65536, 0, -65531, 65536, 0, -65530, 65536, 0, 6, 65536, 0, 5, 65536, 0, -131067, 0, 0, -131066, 0, 0, -131065, 0, 0, -131064, 0, 0, -65529, 65536, 0, 7, 65536, 0, 8, 65536, 0, -65528, 65536, 0, -262136, 327680, 1, -262135, 327680, 1, -262133, 327680, 1, -262134, 327680, 1, -327672, 262144, 0, -327671, 262144, 0, -327670, 262144, 0, -327669, 262144, 0, -262137, 262144, 0, -327668, 589824, 0, -327667, 655360, 0, -327666, 720896, 0, -262129, 327680, 0, -327665, 262144, 0, -327664, 262144, 0, -327663, 262144, 0, -262127, 327680, 0, -262128, 327680, 0, 65544, 65536, 0, 131080, 65536, 0, 131079, 65536, 0, 131076, 65536, 0, 131071, 65536, 0, 65536, 65536, 0, 65537, 65536, 0, 65538, 65536, 0, 65539, 65536, 0, 65540, 65536, 0, 65541, 65536, 0, 65543, 65536, 0, 65542, 65536, 0, 131078, 65536, 0, 131077, 65536, 0, 131075, 65536, 0, 131073, 65536, 0, 131074, 65536, 0, 131072, 65536, 0, 196607, 65536, 0, 262143, 65536, 0, 196609, 65536, 0, 196608, 65536, 0, 196610, 65536, 0, 196612, 65536, 0, 196615, 65536, 0, 196616, 65536, 0, 196614, 65536, 0, 196611, 65536, 0, 196613, 65536, 0, 262149, 65536, 0, 262147, 65536, 0, 262144, 65536, 0, 327679, 65536, 0, 262145, 65536, 0, 262146, 65536, 0, 262148, 65536, 0, 262150, 65536, 0, 262152, 65536, 0, 262151, 65536, 0, 65546, 393216, 0, 65547, 393216, 0, 65548, 393216, 0, 131084, 524288, 1, 131083, 524288, 1, 131082, 524288, 1, 196618, 524288, 1, 196619, 524288, 1, 262156, 524288, 1, 262154, 524288, 1, 262155, 524288, 1, 196620, 524288, 1, 131085, 393216, 0, 131086, 393216, 0, 196623, 393216, 0, 262160, 393216, 0, 196621, 524288, 0, 196622, 524288, 0, 262159, 524288, 0, 262158, 524288, 0, 262157, 524288, 0, 262161, 393216, 0, 262162, 393216, 0, 262164, 393216, 0, 262163, 393216, 0, -393200, 0, 5, -458736, 0, 4, -524272, 0, 3, -196590, 196608, 1, -196591, 196608, 1, -196592, 196608, 1, -196593, 196608, 1, -131054, 196608, 1, -262126, 131072, 0, -196589, 131072, 0, -131052, 131072, 0, -65515, 131072, 0, -65514, 131072, 0, -131057, 196608, 0, -131056, 196608, 0, -131055, 196608, 0, -65520, 196608, 0, -65521, 196608, 0, -65519, 196608, 0, -65517, 196608, 0, -65518, 196608, 0, -131053, 196608, 0, -65516, 196608, 0, 22, 196608, 0, 21, 196608, 0, 20, 196608, 0, 19, 196608, 0, 17, 196608, 0, 15, 196608, 0, 16, 196608, 0, 18, 196608, 0, 23, 196608, 0, 24, 196608, 0, 25, 196608, 0, -65513, 131072, 0, -65512, 131072, 0, -65511, 131072, 0, -65535, 524288, 7, 65549, 458752, 6, -393207, 720896, 1, -196598, 262144, 1, -196597, 262144, 1, 65560, 131072, 1, 65557, 131072, 1, 65555, 131072, 1, 65554, 131072, 1, 65553, 131072, 1, 65556, 196608, 1, 65558, 196608, 1, 65559, 196608, 1, 65561, 196608, 1, 65552, 196608, 1, 262165, 589824, 1, 262166, 655360, 1, 262167, 720896, 1, 262168, 458752, 1, 262169, 458752, 1, 196633, 0, 7, -131048, 196608, 8, -196584, 196608, 7, -327656, 131072, 4, -131047, 65536, 4, -327680, 458752, 1, -327679, 458752, 1, -327678, 458752, 1, -327677, 458752, 1, -393212, 458752, 1, -327676, 458752, 1, -393211, 458752, 1, -327675, 458752, 1, -393210, 458752, 1, -393209, 589824, 1, -393208, 655360, 1, -393206, 524288, 1, -131050, 262144, 8)
 
 [node name="avatar_greenie" parent="." unique_id=243584308 instance=ExtResource("1_3gtbw")]
-position = Vector2(-7, 3)
+position = Vector2(-7.0000005, 2.0000002)
 
 [node name="Camera2D" type="Camera2D" parent="avatar_greenie" unique_id=1892925222]
 position = Vector2(102, -39)
@@ -214,6 +215,7 @@ position_smoothing_enabled = true
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=514852165]
 
 [node name="BlockEditor" type="Panel" parent="CanvasLayer" unique_id=631121289]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -226,6 +228,7 @@ offset_bottom = 260.6875
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_4ekvf")
+script = ExtResource("6_3d84v")
 
 [node name="CloseEditorButton" type="Button" parent="CanvasLayer/BlockEditor" unique_id=564440610]
 layout_mode = 1
@@ -275,4 +278,19 @@ grow_horizontal = 0
 grow_vertical = 2
 script = ExtResource("7_0ej4q")
 
+[node name="RunButton" type="Button" parent="CanvasLayer/BlockEditor" unique_id=1795013392]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -44.0
+offset_top = -45.6875
+offset_right = 44.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "RUN"
+
 [connection signal="pressed" from="CanvasLayer/BlockEditor/CloseEditorButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/BlockEditor/RunButton" to="." method="_on_button_pressed"]
