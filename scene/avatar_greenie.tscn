@@ -22,8 +22,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_qb344"]
-radius = 5.0990195
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ufusc"]
+size = Vector2(18, 21)
 
 [node name="avatar_greenie" type="CharacterBody2D" unique_id=243584308]
 input_pickable = true
@@ -38,5 +38,5 @@ autoplay = "idle"
 frame_progress = 0.98847806
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1645080479]
-position = Vector2(-1, -13)
-shape = SubResource("CircleShape2D_qb344")
+position = Vector2(-2, -13.5)
+shape = SubResource("RectangleShape2D_ufusc")
