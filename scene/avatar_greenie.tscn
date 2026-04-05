@@ -26,6 +26,7 @@ animations = [{
 radius = 5.0990195
 
 [node name="avatar_greenie" type="CharacterBody2D" unique_id=243584308]
+input_pickable = true
 script = ExtResource("1_ufusc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1420913296]

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bnebijersqujg"]
 
 [ext_resource type="PackedScene" uid="uid://uh5hwrjq757g" path="res://scene/avatar_greenie.tscn" id="1_3gtbw"]
+[ext_resource type="Script" uid="uid://bu1twbswerjly" path="res://scene/game_manager.gd" id="1_su3rk"]
 [ext_resource type="Texture2D" uid="uid://c6wceuafycaaa" path="res://asset/sprites/world_tileset.png" id="2_iwwbg"]
 [ext_resource type="Texture2D" uid="uid://b5l8jc80723fb" path="res://asset/others/360_F_986546394_d3jsxWIbjIcANAs4evAM6x9QsC5n2EVS.jpg" id="3_4ekvf"]
 
@@ -170,7 +171,11 @@ texture = ExtResource("2_iwwbg")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_iwwbg")
 
-[node name="Easy Screen" type="Node2D" unique_id=1239839669]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4ekvf"]
+texture = ExtResource("3_4ekvf")
+
+[node name="Main" type="Node2D" unique_id=1239839669]
+script = ExtResource("1_su3rk")
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=157548765]
 scroll_scale = Vector2(0, 0)
@@ -202,3 +207,20 @@ position = Vector2(0, 2)
 position = Vector2(102, -39)
 zoom = Vector2(3, 3)
 position_smoothing_enabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=514852165]
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=631121289]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -451.0
+offset_top = -260.6875
+offset_right = 451.0
+offset_bottom = 260.6875
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_4ekvf")

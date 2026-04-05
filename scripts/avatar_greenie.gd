@@ -1,9 +1,14 @@
 extends CharacterBody2D
 
+signal character_clicked
 
 const SPEED = 200.0
 const JUMP_VELOCITY = -300.0
 
+func _input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.pressed:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			emit_signal("character_clicked")
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
