@@ -23,7 +23,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ufusc"]
-size = Vector2(17.769232, 21.615385)
+size = Vector2(27.692308, 40.769234)
 
 [node name="avatar_greenie" type="CharacterBody2D" unique_id=243584308]
 scale = Vector2(0.65, 0.65)
@@ -31,13 +31,13 @@ input_pickable = true
 script = ExtResource("1_ufusc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1420913296]
-position = Vector2(-3, -14.000001)
-scale = Vector2(0.046979167, 0.044583347)
+position = Vector2(-12.914663, -24.158651)
+scale = Vector2(0.08002805, 0.07844552)
 sprite_frames = SubResource("SpriteFrames_wqnvs")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.98847806
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1645080479]
-position = Vector2(-1.8846164, -13.807695)
+position = Vector2(-9.230772, -25.000002)
 shape = SubResource("RectangleShape2D_ufusc")

@@ -28,10 +28,25 @@ func move_in_direction(dir: Vector2):
 func jump():
 	while not is_on_floor():
 		await get_tree().process_frame
+	
 	var forward = Vector2.RIGHT if right else Vector2.LEFT
-	var arc = position + Vector2(forward.x * 16, -16)
+	var peak_height = -80  
+	var forward_dist = 60 
+	
+	var jump_peak = position + Vector2(forward_dist / 2, peak_height)
+	var landing_pos = position + Vector2(forward_dist, 0)
+	
 	var tween = create_tween()
-	tween.tween_property(self, "position", arc, 0.2)
+	
+	# 1. UPWARD: Takes 0.4 seconds to reach the peak
+	tween.tween_property(self, "position", jump_peak, 0.4)\
+		.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	
+	# 2. DOWNWARD: Increased to 0.6 seconds for a slower, floaty fall
+	# Using TRANS_SINE and EASE_IN_OUT makes the landing very smooth
+	tween.tween_property(self, "position", landing_pos, 0.6)\
+		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	
 	await tween.finished
 
 signal character_clicked

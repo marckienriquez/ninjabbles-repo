@@ -1,23 +1,30 @@
 extends VBoxContainer
 
-func can_drop_data(position, data):
-	return data is Dictionary and data.has("block_text")
+func _ready():
+	# Ensuring the group is set via code just in case
+	add_to_group("drop_area") 
 
-func drop_data(position, data):
-	var block = data  # data is the clone Panel
-	block.get_parent().remove_child(block)
-	add_child(block)
-	# Reset position so VBoxContainer can lay it out
-	block.position = Vector2.ZERO
+func can_drop_data(_pos, data):
+	# The 'data' passed from stop_drag is the Panel node itself
+	return data is Panel and data.is_in_group("draggable_block") 
+
+func drop_data(_pos, data):
+	# Prevent errors if the node is already being deleted
+	if not is_instance_valid(data):
+		return 
+		
+	# Remove from the temporary "drag" parent
+	if data.get_parent():
+		data.get_parent().remove_child(data) 
+	
+	add_child(data) 
+	# Crucial: Reset position and let VBoxContainer take over layout
+	data.position = Vector2.ZERO 
+	data.is_dragging = false # Ensure drag state is reset 
 
 func get_commands() -> Array[String]:
 	var commands: Array[String] = []
 	for child in get_children():
-		commands.append(child.block_text)
+		if "block_text" in child:
+			commands.append(child.block_text) 
 	return commands
-#func _get_insert_index(y: float) -> int:
-	#for i in get_child_count():
-		#var child = get_child(i)
-		#if y < child.position.y + child.size.y * 0.5:
-			#return i
-	#return get_child_count()

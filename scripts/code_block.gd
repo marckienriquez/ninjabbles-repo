@@ -44,14 +44,29 @@ func start_drag(event):
 		move_to_front()
 
 func stop_drag():
-	is_dragging = false
-	if clone == null:
-		return
-
-	var drop_area = get_parent().get_parent().get_node("DropArea")
-	if drop_area.get_global_rect().has_point(get_global_mouse_position()):
-		drop_area.drop_data(Vector2.ZERO, clone)
+	is_dragging = false 
+	var mouse_pos = get_global_mouse_position() 
+	
+	# 1. Find the workspace
+	var drop_area = get_tree().get_first_node_in_group("drop_area") 
+	
+	# 2. Check if we are dropping inside the DropArea
+	if drop_area and drop_area.get_global_rect().has_point(mouse_pos):
+		if clone != null:
+			# Successfully dropping a NEW block from the list
+			drop_area.drop_data(Vector2.ZERO, clone) 
+			clone = null # Clear reference so it isn't freed below 
+		else:
+			# Just moving a block that was already in the DropArea
+			# VBoxContainer handles the re-ordering automatically
+			pass 
 	else:
-		clone.queue_free()
+		# 3. Dropped OUTSIDE: Delete the block
+		if clone != null:
+			clone.queue_free() 
+			clone = null 
+		elif get_parent() != null and get_parent().is_in_group("drop_area"):
+			# If it was an existing block dragged out of the scroll, delete it
+			queue_free() 
 
-	clone = null
+	is_dragging = false
