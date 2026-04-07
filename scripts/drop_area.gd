@@ -24,7 +24,11 @@ func drop_data(_pos, data):
 
 func get_commands() -> Array[String]:
 	var commands: Array[String] = []
+	print("DEBUG: DropArea has ", get_child_count(), " nodes.") # Check this in Output
 	for child in get_children():
-		if "block_text" in child:
-			commands.append(child.block_text) 
+		# Using 'get()' is safer for checking exported variables
+		var text = child.get("block_text")
+		if text != null and text != "":
+			commands.append(text) 
+	print("DEBUG: Commands captured: ", commands)
 	return commands

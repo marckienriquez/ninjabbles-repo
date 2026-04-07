@@ -15,6 +15,10 @@ run/main_scene="uid://dt0s43c84ploo"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GlobalData="*uid://cti4k54b7icb1"
+
 [display]
 
 window/stretch/mode="canvas_items"
