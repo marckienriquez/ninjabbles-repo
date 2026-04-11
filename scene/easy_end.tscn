@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ldwgdl8gsc84"]
+
+[ext_resource type="Script" uid="uid://c21ayaya8shh8" path="res://scripts/easy_end.gd" id="1_qvolc"]
+[ext_resource type="Texture2D" uid="uid://cueddnx1biwxm" path="res://asset/others/pixel-art-dead-tree.png" id="2_j16pf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qt11g"]
+size = Vector2(19.171875, 20.046875)
+
+[node name="easy_end" type="Area2D" unique_id=905497314 groups=["character"]]
+script = ExtResource("1_qvolc")
+
+[node name="wood" type="Sprite2D" parent="." unique_id=828657805]
+position = Vector2(18.000004, -12)
+scale = Vector2(0.030714262, 0.028571444)
+texture = ExtResource("2_j16pf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1205256191]
+position = Vector2(17.414063, -11.9765625)
+shape = SubResource("RectangleShape2D_qt11g")

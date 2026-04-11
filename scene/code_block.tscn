@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://c01l7y0eqi4l5"]
+
+[ext_resource type="Script" uid="uid://cfbjv3fp10y5q" path="res://scripts/code_block.gd" id="1_k2ur1"]
+
+[node name="CodeBlock" type="Panel" unique_id=1015479147]
+custom_minimum_size = Vector2(150, 50)
+offset_right = 65.0
+offset_bottom = 40.0
+size_flags_horizontal = 4
+script = ExtResource("1_k2ur1")
+block_text = null
+
+[node name="BlockLabel" type="Label" parent="." unique_id=1790279643]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -11.5
+offset_right = 25.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
