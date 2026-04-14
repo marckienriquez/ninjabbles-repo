@@ -5,6 +5,7 @@
 
 [sub_resource type="SystemFont" id="SystemFont_lygcj"]
 font_names = PackedStringArray("Courier New")
+subpixel_positioning = 0
 
 [node name="summary_screen" type="Control" unique_id=1813845870]
 layout_mode = 3
@@ -32,6 +33,10 @@ offset_top = 117.0
 offset_right = 970.0
 offset_bottom = 582.0
 
+[node name="CloseEditorButton" type="Button" parent="VBoxContainer" unique_id=1863998167]
+layout_mode = 2
+text = "X"
+
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=892812411]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
@@ -50,3 +55,5 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("SystemFont_lygcj")
 theme_override_font_sizes/font_size = 20
 horizontal_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/CloseEditorButton" to="." method="_on_close_editor_button_pressed"]

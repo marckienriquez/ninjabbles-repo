@@ -19,6 +19,8 @@ func execute_command(command: String):
 			await move_in_direction(Vector2.LEFT)
 		"Jump":
 			await jump()
+		"Climb":
+			await climb()
 
 func move_in_direction(dir: Vector2):
 	var tween = create_tween()
@@ -51,6 +53,14 @@ func jump():
 
 signal character_clicked
 
+func climb():
+	var climb_height = -64 # Adjust based on your tile size
+	var tween = create_tween()
+	# Moves the character up over 0.5 seconds
+	tween.tween_property(self, "position", position + Vector2(0, climb_height), 0.5)\
+		.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	await tween.finished
+	
 const SPEED = 200.0
 const JUMP_VELOCITY = -300.0
 

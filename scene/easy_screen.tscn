@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://c01l7y0eqi4l5" path="res://scene/code_block.tscn" id="6_nodk0"]
 [ext_resource type="Script" uid="uid://1ce37dqiver7" path="res://scripts/drop_area.gd" id="7_0ej4q"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iwwbg"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gm46g"]
 texture = ExtResource("2_iwwbg")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -175,12 +175,12 @@ texture = ExtResource("2_iwwbg")
 
 [sub_resource type="TileSet" id="TileSet_0grb5"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_iwwbg")
+sources/0 = SubResource("TileSetAtlasSource_gm46g")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4ekvf"]
 texture = ExtResource("5_wlpcy")
 
-[node name="Main" type="Node2D" unique_id=1239839669]
+[node name="Easy Screen" type="Node2D" unique_id=1239839669]
 script = ExtResource("1_su3rk")
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=157548765]
