@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://tc4g6mg40ir2"]
+
+[ext_resource type="Texture2D" uid="uid://bcdxrtxfkpr6t" path="res://asset/others/ninja-star-shuriken-pixel-art-260nw-2242669793-removebg-preview.png" id="1_t3u35"]
+[ext_resource type="Script" uid="uid://brxhgp616jrcd" path="res://scripts/summary_screen.gd" id="2_vqyyl"]
+[ext_resource type="Texture2D" uid="uid://ci12daysnbrob" path="res://asset/others/8-bit-scroll-medieval-parchment-vector-52841144-removebg-preview 4.png" id="3_7psfc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ivbv5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jjpml"]
+
+[sub_resource type="SystemFont" id="SystemFont_lygcj"]
+font_names = PackedStringArray("Courier New")
+subpixel_positioning = 0
+
+[node name="Summary" type="Panel" unique_id=697079022]
+offset_right = 1151.0
+offset_bottom = 651.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ivbv5")
+
+[node name="CloseSummaryButton" type="Button" parent="." unique_id=1721654703]
+z_index = 1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -172.0
+offset_top = -13.0
+offset_right = -44.0
+offset_bottom = 102.0
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jjpml")
+icon = ExtResource("1_t3u35")
+
+[node name="summary_screen" type="Control" parent="." unique_id=1211482482]
+anchors_preset = 0
+size_flags_horizontal = 4
+script = ExtResource("2_vqyyl")
+
+[node name="summary" type="TextureRect" parent="summary_screen" unique_id=2057297902]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 1149.0
+offset_bottom = 647.0
+texture = ExtResource("3_7psfc")
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="summary_screen" unique_id=1618484313]
+layout_mode = 0
+offset_left = 187.0
+offset_top = 117.0
+offset_right = 970.0
+offset_bottom = 582.0
+
+[node name="Label" type="Label" parent="summary_screen/VBoxContainer" unique_id=1545614964]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Good Job, Ninja!"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="summary_screen/VBoxContainer" unique_id=208098124]
+layout_mode = 2
+text = "These are the blocks you have assembled..."
+horizontal_alignment = 1
+
+[node name="CodeLabel" type="Label" parent="summary_screen/VBoxContainer" unique_id=2097704502]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_lygcj")
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1

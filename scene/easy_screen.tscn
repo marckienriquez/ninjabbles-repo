@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ldwgdl8gsc84" path="res://scene/easy_end.tscn" id="4_qfuf4"]
 [ext_resource type="Texture2D" uid="uid://ci12daysnbrob" path="res://asset/others/8-bit-scroll-medieval-parchment-vector-52841144-removebg-preview 4.png" id="5_wlpcy"]
 [ext_resource type="Script" uid="uid://dp78yxcki228b" path="res://scripts/block_editor.gd" id="6_3d84v"]
-[ext_resource type="PackedScene" uid="uid://dxcd7r7qrpn2v" path="res://scene/summary_screen.tscn" id="6_gm46g"]
+[ext_resource type="PackedScene" uid="uid://tc4g6mg40ir2" path="res://scene/summary_scene.tscn" id="6_ivbv5"]
 [ext_resource type="PackedScene" uid="uid://c01l7y0eqi4l5" path="res://scene/code_block.tscn" id="6_nodk0"]
 [ext_resource type="Script" uid="uid://1ce37dqiver7" path="res://scripts/drop_area.gd" id="7_0ej4q"]
 [ext_resource type="Texture2D" uid="uid://bcdxrtxfkpr6t" path="res://asset/others/ninja-star-shuriken-pixel-art-260nw-2242669793-removebg-preview.png" id="9_ivbv5"]
@@ -181,7 +181,7 @@ sources/0 = SubResource("TileSetAtlasSource_gm46g")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gm46g"]
 texture = ExtResource("5_wlpcy")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jjpml"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rldx7"]
 
 [node name="Easy Screen" type="Node2D" unique_id=1239839669]
 script = ExtResource("1_su3rk")
@@ -222,30 +222,11 @@ position_smoothing_enabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=980286520]
 
-[node name="Summary" type="Panel" parent="CanvasLayer" unique_id=138697653]
-offset_right = 40.0
-offset_bottom = 40.0
-mouse_filter = 2
-
-[node name="CloseEditorButton" type="Button" parent="CanvasLayer/Summary" unique_id=1859866813]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -46.0
-offset_top = -22.3125
-offset_right = 19.936584
-offset_bottom = 42.6875
-grow_horizontal = 0
-text = "X"
-
-[node name="summary_screen" parent="CanvasLayer/Summary" unique_id=1813845870 instance=ExtResource("6_gm46g")]
-layout_mode = 0
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-grow_horizontal = 1
-grow_vertical = 1
+[node name="Summary" parent="CanvasLayer" unique_id=697079022 instance=ExtResource("6_ivbv5")]
+offset_left = 125.0
+offset_top = 63.3125
+offset_right = 1276.0
+offset_bottom = 714.3125
 
 [node name="BlockEditor" type="Panel" parent="CanvasLayer" unique_id=1599585111]
 visible = false
@@ -274,8 +255,7 @@ offset_top = -15.3125
 offset_right = 38.0
 offset_bottom = 99.6875
 grow_horizontal = 0
-theme_override_styles/normal = SubResource("StyleBoxEmpty_jjpml")
-text = "X"
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rldx7")
 icon = ExtResource("9_ivbv5")
 
 [node name="BlockList" type="VBoxContainer" parent="CanvasLayer/BlockEditor" unique_id=610875775]
