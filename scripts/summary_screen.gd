@@ -32,4 +32,9 @@ func convert_to_technical(cmd_name: String) -> String:
 		"Move right": return "moveForward"
 		"Move left": return "moveBackward"
 		"Jump": return "jump"
+		"Climb": return "climbWall"
 		_: return cmd_name.to_lower().replace(" ", "_")
+
+
+func _on_close_editor_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scene/average_screen.tscn")
