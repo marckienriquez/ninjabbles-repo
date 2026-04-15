@@ -213,7 +213,7 @@ layer_0/tile_data = PackedInt32Array(65535, 0, 0, 65534, 0, 0, 65533, 0, 0, 6553
 position = Vector2(736, -35)
 
 [node name="avatar_greenie" parent="." unique_id=243584308 instance=ExtResource("1_3gtbw")]
-position = Vector2(-7.0000005, 2.0000002)
+position = Vector2(-18, 3.0000002)
 
 [node name="Camera2D" type="Camera2D" parent="avatar_greenie" unique_id=1892925222]
 position = Vector2(102, -39)
@@ -223,10 +223,6 @@ position_smoothing_enabled = true
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=980286520]
 
 [node name="Summary" parent="CanvasLayer" unique_id=697079022 instance=ExtResource("6_ivbv5")]
-offset_left = 125.0
-offset_top = 63.3125
-offset_right = 1276.0
-offset_bottom = 714.3125
 
 [node name="BlockEditor" type="Panel" parent="CanvasLayer" unique_id=1599585111]
 visible = false
