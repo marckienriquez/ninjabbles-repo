@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bnebijersqujg"]
 
 [ext_resource type="PackedScene" uid="uid://uh5hwrjq757g" path="res://scene/avatar_greenie.tscn" id="1_3gtbw"]
-[ext_resource type="Script" path="res://scene/game_manager.gd" id="1_su3rk"]
+[ext_resource type="Script" uid="uid://bu1twbswerjly" path="res://scene/game_manager.gd" id="1_su3rk"]
 [ext_resource type="Texture2D" uid="uid://3fniryiurye3" path="res://asset/others/Gemini_Generated_Image_d7j3qtd7j3qtd7j3.png" id="2_3d84v"]
 [ext_resource type="Texture2D" uid="uid://c6wceuafycaaa" path="res://asset/sprites/world_tileset.png" id="2_iwwbg"]
 [ext_resource type="PackedScene" uid="uid://ldwgdl8gsc84" path="res://scene/easy_end.tscn" id="4_qfuf4"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dxcd7r7qrpn2v" path="res://scene/summary_screen.tscn" id="6_gm46g"]
 [ext_resource type="PackedScene" uid="uid://c01l7y0eqi4l5" path="res://scene/code_block.tscn" id="6_nodk0"]
 [ext_resource type="Script" uid="uid://1ce37dqiver7" path="res://scripts/drop_area.gd" id="7_0ej4q"]
+[ext_resource type="Texture2D" uid="uid://bcdxrtxfkpr6t" path="res://asset/others/ninja-star-shuriken-pixel-art-260nw-2242669793-removebg-preview.png" id="9_ivbv5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gm46g"]
 texture = ExtResource("2_iwwbg")
@@ -177,8 +178,10 @@ texture = ExtResource("2_iwwbg")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_gm46g")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4ekvf"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gm46g"]
 texture = ExtResource("5_wlpcy")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jjpml"]
 
 [node name="Easy Screen" type="Node2D" unique_id=1239839669]
 script = ExtResource("1_su3rk")
@@ -217,11 +220,24 @@ position = Vector2(102, -39)
 zoom = Vector2(3, 3)
 position_smoothing_enabled = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=514852165]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=980286520]
 
-[node name="Summary" type="Panel" parent="CanvasLayer" unique_id=1647938665]
+[node name="Summary" type="Panel" parent="CanvasLayer" unique_id=138697653]
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="CloseEditorButton" type="Button" parent="CanvasLayer/Summary" unique_id=1859866813]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -46.0
+offset_top = -22.3125
+offset_right = 19.936584
+offset_bottom = 42.6875
+grow_horizontal = 0
+text = "X"
 
 [node name="summary_screen" parent="CanvasLayer/Summary" unique_id=1813845870 instance=ExtResource("6_gm46g")]
 layout_mode = 0
@@ -231,7 +247,7 @@ anchor_bottom = 0.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="BlockEditor" type="Panel" parent="CanvasLayer" unique_id=631121289]
+[node name="BlockEditor" type="Panel" parent="CanvasLayer" unique_id=1599585111]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -244,22 +260,25 @@ offset_right = 451.0
 offset_bottom = 260.6875
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_4ekvf")
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_gm46g")
 script = ExtResource("6_3d84v")
 
-[node name="CloseEditorButton" type="Button" parent="CanvasLayer/BlockEditor" unique_id=564440610]
+[node name="CloseEditorButton" type="Button" parent="CanvasLayer/BlockEditor" unique_id=801321093]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -46.0
-offset_top = -22.3125
-offset_right = 19.936584
-offset_bottom = 42.6875
+offset_left = -90.0
+offset_top = -15.3125
+offset_right = 38.0
+offset_bottom = 99.6875
 grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jjpml")
 text = "X"
+icon = ExtResource("9_ivbv5")
 
-[node name="BlockList" type="VBoxContainer" parent="CanvasLayer/BlockEditor" unique_id=1418286106]
+[node name="BlockList" type="VBoxContainer" parent="CanvasLayer/BlockEditor" unique_id=610875775]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
@@ -273,17 +292,20 @@ grow_vertical = 2
 layout_mode = 2
 block_text = "Move right"
 
-[node name="CodeBlock2" parent="CanvasLayer/BlockEditor/BlockList" unique_id=438589352 instance=ExtResource("6_nodk0")]
+[node name="CodeBlock2" parent="CanvasLayer/BlockEditor/BlockList" unique_id=390986160 instance=ExtResource("6_nodk0")]
 layout_mode = 2
 block_text = "Move left"
 
-[node name="CodeBlock3" parent="CanvasLayer/BlockEditor/BlockList" unique_id=2035493564 instance=ExtResource("6_nodk0")]
+[node name="CodeBlock3" parent="CanvasLayer/BlockEditor/BlockList" unique_id=567970683 instance=ExtResource("6_nodk0")]
 layout_mode = 2
 block_text = "Jump"
 
-[node name="DropArea" type="VBoxContainer" parent="CanvasLayer/BlockEditor" unique_id=744747510]
-layout_mode = 1
-anchors_preset = 11
+[node name="CodeBlock4" parent="CanvasLayer/BlockEditor/BlockList" unique_id=747678687 instance=ExtResource("6_nodk0")]
+layout_mode = 2
+block_text = "Climb"
+
+[node name="DropArea" type="VBoxContainer" parent="CanvasLayer/BlockEditor" unique_id=408195166 groups=["drop_area"]]
+layout_mode = 0
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -293,9 +315,10 @@ offset_right = -83.0
 offset_bottom = -53.6875
 grow_horizontal = 0
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("7_0ej4q")
 
-[node name="RunButton" type="Button" parent="CanvasLayer/BlockEditor" unique_id=1795013392]
+[node name="RunButton" type="Button" parent="CanvasLayer/BlockEditor" unique_id=1760044823]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -308,6 +331,3 @@ offset_right = 44.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "RUN"
-
-[connection signal="pressed" from="CanvasLayer/BlockEditor/CloseEditorButton" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/BlockEditor/RunButton" to="." method="_on_button_pressed"]

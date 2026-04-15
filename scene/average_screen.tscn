@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dl43cp0d1v0l3"]
 
 [ext_resource type="Texture2D" uid="uid://bhsj81h7ulsys" path="res://asset/others/Gemini_Generated_Image_25wd8i25wd8i25wd.png" id="1_itb41"]
+[ext_resource type="Script" uid="uid://bu1twbswerjly" path="res://scene/game_manager.gd" id="1_ucndy"]
 [ext_resource type="Texture2D" uid="uid://c6wceuafycaaa" path="res://asset/sprites/world_tileset.png" id="2_ucndy"]
 [ext_resource type="PackedScene" uid="uid://uh5hwrjq757g" path="res://scene/avatar_greenie.tscn" id="3_24r81"]
 [ext_resource type="PackedScene" uid="uid://dxcd7r7qrpn2v" path="res://scene/summary_screen.tscn" id="4_1ivf0"]
@@ -179,6 +180,7 @@ sources/0 = SubResource("TileSetAtlasSource_4hgsv")
 texture = ExtResource("5_rioux")
 
 [node name="Average Screen" type="Node2D" unique_id=1497751499]
+script = ExtResource("1_ucndy")
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1768445130]
 scroll_scale = Vector2(0, 0)
@@ -214,7 +216,6 @@ zoom = Vector2(3, 3)
 position_smoothing_enabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=632352534]
-visible = false
 
 [node name="Summary" type="Panel" parent="CanvasLayer" unique_id=1451176793]
 offset_right = 40.0
@@ -242,6 +243,7 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="BlockEditor" type="Panel" parent="CanvasLayer" unique_id=697092854]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
