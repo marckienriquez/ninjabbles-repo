@@ -213,7 +213,7 @@ layer_0/tile_data = PackedInt32Array(65535, 0, 0, 65534, 0, 0, 65533, 0, 0, 6553
 position = Vector2(736, -35)
 
 [node name="avatar_greenie" parent="." unique_id=243584308 instance=ExtResource("1_3gtbw")]
-position = Vector2(-18, 3.0000002)
+position = Vector2(-12.000002, 3.0000002)
 
 [node name="Camera2D" type="Camera2D" parent="avatar_greenie" unique_id=1892925222]
 position = Vector2(102, -39)
