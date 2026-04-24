@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://tc4g6mg40ir2"]
+[gd_scene format=3 uid="uid://bvd0tsaxq3x37"]
 
 [ext_resource type="Texture2D" uid="uid://bcdxrtxfkpr6t" path="res://asset/others/ninja-star-shuriken-pixel-art-260nw-2242669793-removebg-preview.png" id="1_t3u35"]
 [ext_resource type="Script" uid="uid://brxhgp616jrcd" path="res://scripts/summary_screen.gd" id="2_vqyyl"]
@@ -80,14 +80,12 @@ horizontal_alignment = 1
 
 [node name="CloseSummaryButton" type="Button" parent="summary_screen" unique_id=1721654703]
 z_index = 1
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = 984.0
-offset_top = -6.0
-offset_right = 1112.0
-offset_bottom = 109.0
-grow_horizontal = 0
+layout_mode = 0
+offset_left = 965.5
+offset_top = 5.5
+offset_right = 1079.5
+offset_bottom = 120.5
 theme_override_styles/normal = SubResource("StyleBoxEmpty_jjpml")
 icon = ExtResource("1_t3u35")
+
+[connection signal="pressed" from="summary_screen/CloseSummaryButton" to="summary_screen" method="_on_close_summary_button_pressed"]

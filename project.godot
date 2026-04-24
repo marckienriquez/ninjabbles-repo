@@ -24,6 +24,10 @@ GlobalData="*uid://cti4k54b7icb1"
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[global_group]
+
+character=""
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

@@ -25,7 +25,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ufusc"]
 size = Vector2(27.692308, 40.769234)
 
-[node name="avatar_greenie" type="CharacterBody2D" unique_id=243584308]
+[node name="avatar_greenie" type="CharacterBody2D" unique_id=243584308 groups=["character"]]
 z_index = 1
 scale = Vector2(0.65, 0.65)
 input_pickable = true

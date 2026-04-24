@@ -36,5 +36,5 @@ func convert_to_technical(cmd_name: String) -> String:
 		_: return cmd_name.to_lower().replace(" ", "_")
 
 
-func _on_close_editor_button_pressed() -> void:
+func _on_close_summary_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scene/average_screen.tscn")
