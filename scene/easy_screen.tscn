@@ -5,12 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://3fniryiurye3" path="res://asset/others/Gemini_Generated_Image_d7j3qtd7j3qtd7j3.png" id="2_3d84v"]
 [ext_resource type="Texture2D" uid="uid://c6wceuafycaaa" path="res://asset/sprites/world_tileset.png" id="2_iwwbg"]
 [ext_resource type="PackedScene" uid="uid://ldwgdl8gsc84" path="res://scene/easy_end.tscn" id="4_qfuf4"]
-[ext_resource type="Texture2D" uid="uid://ci12daysnbrob" path="res://asset/others/8-bit-scroll-medieval-parchment-vector-52841144-removebg-preview 4.png" id="5_wlpcy"]
-[ext_resource type="Script" uid="uid://dp78yxcki228b" path="res://scripts/block_editor.gd" id="6_3d84v"]
-[ext_resource type="PackedScene" uid="uid://bvd0tsaxq3x37" path="res://scene/summary_scene.tscn" id="6_ivbv5"]
-[ext_resource type="PackedScene" uid="uid://c01l7y0eqi4l5" path="res://scene/code_block.tscn" id="6_nodk0"]
-[ext_resource type="Script" uid="uid://1ce37dqiver7" path="res://scripts/drop_area.gd" id="7_0ej4q"]
-[ext_resource type="Texture2D" uid="uid://bcdxrtxfkpr6t" path="res://asset/others/ninja-star-shuriken-pixel-art-260nw-2242669793-removebg-preview.png" id="9_ivbv5"]
+[ext_resource type="PackedScene" uid="uid://tc4g6mg40ir2" path="res://scene/summary_scene.tscn" id="6_ivbv5"]
+[ext_resource type="Texture2D" uid="uid://b6qca3bcm0v2y" path="res://asset/others/scroll-long.png" id="6_rldx7"]
+[ext_resource type="Texture2D" uid="uid://cw7jqa5fid72l" path="res://asset/others/shuriken.png" id="8_dacax"]
+[ext_resource type="FontFile" uid="uid://3qsftis2m7nf" path="res://asset/PixelifySans-VariableFont_wght.ttf" id="8_rldx7"]
+[ext_resource type="PackedScene" uid="uid://7gqsivhlhcpg" path="res://scene/block_editor.tscn" id="10_gm46g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gm46g"]
 texture = ExtResource("2_iwwbg")
@@ -178,9 +177,6 @@ texture = ExtResource("2_iwwbg")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_gm46g")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gm46g"]
-texture = ExtResource("5_wlpcy")
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rldx7"]
 
 [node name="Easy Screen" type="Node2D" unique_id=1239839669]
@@ -224,84 +220,54 @@ position_smoothing_enabled = true
 
 [node name="Summary" parent="CanvasLayer" unique_id=697079022 instance=ExtResource("6_ivbv5")]
 
-[node name="BlockEditor" type="Panel" parent="CanvasLayer" unique_id=1599585111]
-visible = false
+[node name="Instructions" type="TextureRect" parent="CanvasLayer" unique_id=323049410]
+anchors_preset = -1
+anchor_left = 0.499
+anchor_top = 0.049000002
+anchor_right = 0.499
+anchor_bottom = 0.049000002
+offset_left = -264.84802
+offset_top = -13.752001
+offset_right = 264.90198
+offset_bottom = 120.248
+grow_horizontal = 2
+texture = ExtResource("6_rldx7")
+
+[node name="CloseInstructionsButton" type="Button" parent="CanvasLayer/Instructions" unique_id=167173745]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.98
+anchor_top = 0.101
+anchor_right = 0.98
+anchor_bottom = 0.101
+offset_left = -29.15503
+offset_top = -29.533998
+offset_right = 28.84497
+offset_bottom = 29.466
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rldx7")
+icon = ExtResource("8_dacax")
+expand_icon = true
+
+[node name="Label" type="Label" parent="CanvasLayer/Instructions" unique_id=1323980421]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -451.0
-offset_top = -260.6875
-offset_right = 451.0
-offset_bottom = 260.6875
+offset_left = -217.5
+offset_top = -42.5
+offset_right = 217.5
+offset_bottom = 42.5
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_gm46g")
-script = ExtResource("6_3d84v")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_rldx7")
+theme_override_font_sizes/font_size = 20
+text = "sorry marc sorry rye"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
 
-[node name="CloseEditorButton" type="Button" parent="CanvasLayer/BlockEditor" unique_id=801321093]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -90.0
-offset_top = -15.3125
-offset_right = 38.0
-offset_bottom = 99.6875
-grow_horizontal = 0
-theme_override_styles/normal = SubResource("StyleBoxEmpty_rldx7")
-icon = ExtResource("9_ivbv5")
-
-[node name="BlockList" type="VBoxContainer" parent="CanvasLayer/BlockEditor" unique_id=610875775]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_left = 94.0
-offset_top = 75.6875
-offset_right = 307.0
-offset_bottom = -49.6875
-grow_vertical = 2
-
-[node name="CodeBlock" parent="CanvasLayer/BlockEditor/BlockList" unique_id=1015479147 instance=ExtResource("6_nodk0")]
-layout_mode = 2
-block_text = "Move right"
-
-[node name="CodeBlock2" parent="CanvasLayer/BlockEditor/BlockList" unique_id=390986160 instance=ExtResource("6_nodk0")]
-layout_mode = 2
-block_text = "Move left"
-
-[node name="CodeBlock3" parent="CanvasLayer/BlockEditor/BlockList" unique_id=567970683 instance=ExtResource("6_nodk0")]
-layout_mode = 2
-block_text = "Jump"
-
-[node name="DropArea" type="VBoxContainer" parent="CanvasLayer/BlockEditor" unique_id=408195166 groups=["drop_area"]]
-layout_mode = 0
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -567.0
-offset_top = 57.6875
-offset_right = -83.0
-offset_bottom = -53.6875
-grow_horizontal = 0
-grow_vertical = 2
-mouse_filter = 2
-script = ExtResource("7_0ej4q")
-
-[node name="RunButton" type="Button" parent="CanvasLayer/BlockEditor" unique_id=1760044823]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -44.0
-offset_top = -45.6875
-offset_right = 44.0
-grow_horizontal = 2
-grow_vertical = 0
-text = "RUN"
-
-[editable path="CanvasLayer/Summary"]
+[node name="BlockEditor" parent="CanvasLayer" unique_id=912800315 instance=ExtResource("10_gm46g")]

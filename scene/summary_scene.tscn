@@ -1,14 +1,11 @@
-[gd_scene format=3 uid="uid://bvd0tsaxq3x37"]
+[gd_scene format=3 uid="uid://tc4g6mg40ir2"]
 
-[ext_resource type="Texture2D" uid="uid://bcdxrtxfkpr6t" path="res://asset/others/ninja-star-shuriken-pixel-art-260nw-2242669793-removebg-preview.png" id="1_t3u35"]
+[ext_resource type="Texture2D" uid="uid://drj8srr5bq7af" path="res://asset/others/scroll-big.png" id="2_t3u35"]
 [ext_resource type="Script" uid="uid://brxhgp616jrcd" path="res://scripts/summary_screen.gd" id="2_vqyyl"]
-[ext_resource type="Texture2D" uid="uid://ci12daysnbrob" path="res://asset/others/8-bit-scroll-medieval-parchment-vector-52841144-removebg-preview 4.png" id="3_7psfc"]
+[ext_resource type="FontFile" uid="uid://3qsftis2m7nf" path="res://asset/PixelifySans-VariableFont_wght.ttf" id="3_vqyyl"]
+[ext_resource type="Texture2D" uid="uid://cw7jqa5fid72l" path="res://asset/others/shuriken.png" id="4_vqyyl"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ivbv5"]
-
-[sub_resource type="SystemFont" id="SystemFont_lygcj"]
-font_names = PackedStringArray("Courier New")
-subpixel_positioning = 0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jjpml"]
 
@@ -45,11 +42,11 @@ script = ExtResource("2_vqyyl")
 
 [node name="summary" type="TextureRect" parent="summary_screen" unique_id=2057297902]
 layout_mode = 0
-offset_left = 2.0
-offset_top = 2.0
-offset_right = 1149.0
-offset_bottom = 647.0
-texture = ExtResource("3_7psfc")
+offset_left = 59.5
+offset_top = 41.5
+offset_right = 1109.0
+offset_bottom = 598.0
+texture = ExtResource("2_t3u35")
 stretch_mode = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="summary_screen" unique_id=1618484313]
@@ -61,31 +58,39 @@ offset_bottom = 582.0
 
 [node name="Label" type="Label" parent="summary_screen/VBoxContainer" unique_id=1545614964]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_vqyyl")
 theme_override_font_sizes/font_size = 32
 text = "Good Job, Ninja!"
 horizontal_alignment = 1
+uppercase = true
 
 [node name="Label2" type="Label" parent="summary_screen/VBoxContainer" unique_id=208098124]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_vqyyl")
 text = "These are the blocks you have assembled..."
 horizontal_alignment = 1
+uppercase = true
 
 [node name="CodeLabel" type="Label" parent="summary_screen/VBoxContainer" unique_id=2097704502]
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("SystemFont_lygcj")
+theme_override_fonts/font = ExtResource("3_vqyyl")
 theme_override_font_sizes/font_size = 20
 horizontal_alignment = 1
+uppercase = true
 
 [node name="CloseSummaryButton" type="Button" parent="summary_screen" unique_id=1721654703]
 z_index = 1
 layout_mode = 0
-offset_left = 965.5
-offset_top = 5.5
-offset_right = 1079.5
-offset_bottom = 120.5
+offset_left = 961.5
+offset_top = 19.5
+offset_right = 1056.5
+offset_bottom = 115.33333
 theme_override_styles/normal = SubResource("StyleBoxEmpty_jjpml")
-icon = ExtResource("1_t3u35")
+icon = ExtResource("4_vqyyl")
+expand_icon = true
 
 [connection signal="pressed" from="summary_screen/CloseSummaryButton" to="summary_screen" method="_on_close_summary_button_pressed"]

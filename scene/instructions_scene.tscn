@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://bl6mhc5u4hohf"]
+
+[ext_resource type="Texture2D" uid="uid://b6qca3bcm0v2y" path="res://asset/others/scroll-long.png" id="1_napv6"]
+[ext_resource type="Texture2D" uid="uid://cw7jqa5fid72l" path="res://asset/others/shuriken.png" id="2_m6kxi"]
+[ext_resource type="FontFile" uid="uid://3qsftis2m7nf" path="res://asset/PixelifySans-VariableFont_wght.ttf" id="3_o7qu1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rldx7"]
+
+[node name="Instructions" type="TextureRect" unique_id=323049410]
+anchors_preset = -1
+anchor_left = 0.499
+anchor_top = 0.049000002
+anchor_right = 0.499
+anchor_bottom = 0.049000002
+offset_left = -264.84802
+offset_top = -13.752001
+offset_right = 264.90198
+offset_bottom = 120.248
+grow_horizontal = 2
+texture = ExtResource("1_napv6")
+
+[node name="CloseInstructionsButton" type="Button" parent="." unique_id=167173745]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.98
+anchor_top = 0.101
+anchor_right = 0.98
+anchor_bottom = 0.101
+offset_left = -29.15503
+offset_top = -29.533998
+offset_right = 28.84497
+offset_bottom = 29.466
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rldx7")
+icon = ExtResource("2_m6kxi")
+expand_icon = true
+
+[node name="Label" type="Label" parent="." unique_id=1323980421]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -217.5
+offset_top = -42.5
+offset_right = 217.5
+offset_bottom = 42.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_o7qu1")
+theme_override_font_sizes/font_size = 20
+text = "sorry marc sorry rye"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true

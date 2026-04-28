@@ -1,17 +1,19 @@
-[gd_scene format=3 uid="uid://cw4dynuxc1rn5"]
+[gd_scene format=3 uid="uid://dl43cp0d1v0l3"]
 
 [ext_resource type="Texture2D" uid="uid://bhsj81h7ulsys" path="res://asset/others/Gemini_Generated_Image_25wd8i25wd8i25wd.png" id="1_itb41"]
 [ext_resource type="Script" uid="uid://bu1twbswerjly" path="res://scene/game_manager.gd" id="1_ucndy"]
 [ext_resource type="Texture2D" uid="uid://c6wceuafycaaa" path="res://asset/sprites/world_tileset.png" id="2_ucndy"]
 [ext_resource type="PackedScene" uid="uid://uh5hwrjq757g" path="res://scene/avatar_greenie.tscn" id="3_24r81"]
 [ext_resource type="PackedScene" uid="uid://dclxaeh0ab8fp" path="res://scene/average_end.tscn" id="4_rioux"]
-[ext_resource type="PackedScene" uid="uid://bvd0tsaxq3x37" path="res://scene/summary_scene.tscn" id="5_1ivf0"]
-[ext_resource type="Texture2D" uid="uid://bcdxrtxfkpr6t" path="res://asset/others/ninja-star-shuriken-pixel-art-260nw-2242669793-removebg-preview.png" id="5_24r81"]
-[ext_resource type="Texture2D" uid="uid://ci12daysnbrob" path="res://asset/others/8-bit-scroll-medieval-parchment-vector-52841144-removebg-preview 4.png" id="5_rioux"]
+[ext_resource type="PackedScene" uid="uid://tc4g6mg40ir2" path="res://scene/summary_scene.tscn" id="5_1ivf0"]
 [ext_resource type="Script" uid="uid://dp78yxcki228b" path="res://scripts/block_editor.gd" id="6_v58g8"]
 [ext_resource type="PackedScene" uid="uid://c01l7y0eqi4l5" path="res://scene/code_block.tscn" id="7_0hyr4"]
+[ext_resource type="Texture2D" uid="uid://drj8srr5bq7af" path="res://asset/others/scroll-big.png" id="7_rioux"]
 [ext_resource type="Script" uid="uid://1ce37dqiver7" path="res://scripts/drop_area.gd" id="8_jnqrk"]
+[ext_resource type="Texture2D" uid="uid://cw7jqa5fid72l" path="res://asset/others/shuriken.png" id="9_v58g8"]
 [ext_resource type="PackedScene" uid="uid://w6ju4me3dphe" path="res://scene/ladder.tscn.tscn" id="11_1ivf0"]
+[ext_resource type="Texture2D" uid="uid://b6qca3bcm0v2y" path="res://asset/others/scroll-long.png" id="12_0hyr4"]
+[ext_resource type="FontFile" uid="uid://3qsftis2m7nf" path="res://asset/PixelifySans-VariableFont_wght.ttf" id="13_jnqrk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4hgsv"]
 texture = ExtResource("2_ucndy")
@@ -179,10 +181,12 @@ texture = ExtResource("2_ucndy")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_4hgsv")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0hyr4"]
-texture = ExtResource("5_rioux")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gm46g"]
+texture = ExtResource("7_rioux")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rioux"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rldx7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4hgsv"]
 
 [node name="Average Screen" type="Node2D" unique_id=1497751499]
 script = ExtResource("1_ucndy")
@@ -227,7 +231,7 @@ position_smoothing_enabled = true
 
 [node name="Summary" parent="CanvasLayer" unique_id=697079022 instance=ExtResource("5_1ivf0")]
 
-[node name="BlockEditor" type="Panel" parent="CanvasLayer" unique_id=1434746110]
+[node name="BlockEditor" type="Panel" parent="CanvasLayer" unique_id=912800315]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -241,24 +245,24 @@ offset_bottom = 260.6875
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_0hyr4")
+theme_override_styles/panel = SubResource("StyleBoxTexture_gm46g")
 script = ExtResource("6_v58g8")
 
-[node name="CloseEditorButton" type="Button" parent="CanvasLayer/BlockEditor" unique_id=597376013]
+[node name="CloseEditorButton" type="Button" parent="CanvasLayer/BlockEditor" unique_id=1020345167]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -90.0
-offset_top = -15.3125
-offset_right = 38.0
-offset_bottom = 99.6875
+offset_left = -88.0
+offset_top = -28.3125
+offset_right = 43.0
+offset_bottom = 102.6875
 grow_horizontal = 0
-theme_override_styles/normal = SubResource("StyleBoxEmpty_rioux")
-text = "X"
-icon = ExtResource("5_24r81")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rldx7")
+icon = ExtResource("9_v58g8")
+expand_icon = true
 
-[node name="BlockList" type="VBoxContainer" parent="CanvasLayer/BlockEditor" unique_id=892724621]
+[node name="BlockList" type="VBoxContainer" parent="CanvasLayer/BlockEditor" unique_id=1590567492]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
@@ -272,19 +276,19 @@ grow_vertical = 2
 layout_mode = 2
 block_text = "Move right"
 
-[node name="CodeBlock2" parent="CanvasLayer/BlockEditor/BlockList" unique_id=815365561 instance=ExtResource("7_0hyr4")]
+[node name="CodeBlock2" parent="CanvasLayer/BlockEditor/BlockList" unique_id=507152617 instance=ExtResource("7_0hyr4")]
 layout_mode = 2
 block_text = "Move left"
 
-[node name="CodeBlock3" parent="CanvasLayer/BlockEditor/BlockList" unique_id=1548627346 instance=ExtResource("7_0hyr4")]
+[node name="CodeBlock3" parent="CanvasLayer/BlockEditor/BlockList" unique_id=1793380377 instance=ExtResource("7_0hyr4")]
 layout_mode = 2
 block_text = "Jump"
 
-[node name="CodeBlock4" parent="CanvasLayer/BlockEditor/BlockList" unique_id=1262125881 instance=ExtResource("7_0hyr4")]
+[node name="CodeBlock4" parent="CanvasLayer/BlockEditor/BlockList" unique_id=97962079 instance=ExtResource("7_0hyr4")]
 layout_mode = 2
 block_text = "Climb"
 
-[node name="DropArea" type="VBoxContainer" parent="CanvasLayer/BlockEditor" unique_id=1975204558 groups=["drop_area"]]
+[node name="DropArea" type="VBoxContainer" parent="CanvasLayer/BlockEditor" unique_id=433798089 groups=["drop_area"]]
 layout_mode = 0
 anchor_left = 1.0
 anchor_right = 1.0
@@ -298,19 +302,92 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("8_jnqrk")
 
-[node name="RunButton" type="Button" parent="CanvasLayer/BlockEditor" unique_id=1956708371]
+[node name="RunButton" type="Button" parent="CanvasLayer/BlockEditor" unique_id=1254735476]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -44.0
-offset_top = -45.6875
-offset_right = 44.0
+offset_left = -129.0
+offset_top = -68.6875
+offset_right = 135.0
+offset_bottom = 25.3125
 grow_horizontal = 2
 grow_vertical = 0
-text = "RUN"
+icon = ExtResource("12_0hyr4")
+flat = true
+
+[node name="Label" type="Label" parent="CanvasLayer/BlockEditor/RunButton" unique_id=606254386]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8117647, 0.48235294, 0.3019608, 1)
+theme_override_fonts/font = ExtResource("13_jnqrk")
+theme_override_font_sizes/font_size = 42
+text = "Run"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Instructions" type="TextureRect" parent="CanvasLayer" unique_id=323049410]
+anchors_preset = -1
+anchor_left = 0.499
+anchor_top = 0.049000002
+anchor_right = 0.499
+anchor_bottom = 0.049000002
+offset_left = -264.84802
+offset_top = -13.752001
+offset_right = 264.90198
+offset_bottom = 120.248
+grow_horizontal = 2
+texture = ExtResource("12_0hyr4")
+
+[node name="CloseInstructionsButton" type="Button" parent="CanvasLayer/Instructions" unique_id=167173745]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.98
+anchor_top = 0.101
+anchor_right = 0.98
+anchor_bottom = 0.101
+offset_left = -29.15503
+offset_top = -29.533998
+offset_right = 28.84497
+offset_bottom = 29.466
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4hgsv")
+icon = ExtResource("9_v58g8")
+expand_icon = true
+
+[node name="Label" type="Label" parent="CanvasLayer/Instructions" unique_id=1323980421]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -217.5
+offset_top = -42.5
+offset_right = 217.5
+offset_bottom = 42.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("13_jnqrk")
+theme_override_font_sizes/font_size = 20
+text = "sorry marc sorry rye"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
 
 [node name="Ladder_tscn" parent="." unique_id=1311348962 instance=ExtResource("11_1ivf0")]
 position = Vector2(120, -9)
