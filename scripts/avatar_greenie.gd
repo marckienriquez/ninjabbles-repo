@@ -11,11 +11,14 @@ var on_ladder: bool = false
 var current_ladder: Node2D = null
 var is_climbing: bool = false
 var is_jumping: bool = false
+var last_safe_position: Vector2
+const FALL_THRESHOLD = 200.0
 const SPEED = 200.0
 const JUMP_VELOCITY = -300.0
 
 func _ready():
 	add_to_group("character")
+	last_safe_position = global_position
 
 func run_commands(commands: Array[String]):
 	for command in commands:
@@ -125,11 +128,18 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 		return
 
-	# Ladder logic remains...[cite: 1]
+	# THE FIX: Continuously save the position whenever we are safely on the floor
+	if is_on_floor() and not is_jumping:
+		last_safe_position = global_position
 
+	# Standard gravity logic 
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	
+	# Check if we fell off the map
+	if global_position.y > FALL_THRESHOLD:
+		reset_to_last_safe_spot()
+		
 	# MODIFIED: Only handle movement if NOT in a controlled jump
 	if not is_jumping:
 		var direction := Input.get_axis("ui_left", "ui_right")
@@ -200,3 +210,10 @@ func _break_vertical_stack(tile_map, hit_pos: Vector2, forward: Vector2):
 		# Verify that 'is_breakable' is checked in your TileSet editor[cite: 2]
 		if tile_data and tile_data.get_custom_data("is_breakable"):
 			tile_map.erase_cell(0, pos)
+
+func reset_to_last_safe_spot():
+	var backward_direction = -1 if right else 1
+	var offset = Vector2(backward_direction * 35, 0) 
+	global_position = last_safe_position + offset
+	velocity = Vector2.ZERO # Stop all falling momentum
+	is_jumping = false      # Reset jump state if they fell during a jump
