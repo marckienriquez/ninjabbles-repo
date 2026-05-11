@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bp08ny4h3ypjh"]
+
+[ext_resource type="Script" uid="uid://c44a0hqqvsfea" path="res://scripts/hard_end.gd" id="1_tp4ep"]
+[ext_resource type="Texture2D" uid="uid://bdop7rmka0tk2" path="res://asset/others/pngtree-gas-lighter-in-pixel-art-style-png-image_12522190.png" id="2_arevf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8rab"]
+size = Vector2(20, 23)
+
+[node name="hard_end" type="Area2D" unique_id=75934986 groups=["character"]]
+script = ExtResource("1_tp4ep")
+
+[node name="fire" type="Sprite2D" parent="." unique_id=1424851680]
+position = Vector2(16, -14.999999)
+scale = Vector2(0.091666676, 0.08749996)
+texture = ExtResource("2_arevf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=250022408]
+position = Vector2(16, -15.5)
+shape = SubResource("RectangleShape2D_w8rab")

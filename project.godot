@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GlobalData="*uid://cti4k54b7icb1"
+AudioStreamBgMusic="*uid://cmt1hgdegb26t"
 
 [display]
 

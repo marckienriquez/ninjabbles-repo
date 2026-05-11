@@ -9,7 +9,7 @@ size = Vector2(19, 22)
 [node name="average_end" type="Area2D" unique_id=1957414864 groups=["character"]]
 script = ExtResource("1_qyv0v")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=444003291]
+[node name="water" type="Sprite2D" parent="." unique_id=444003291]
 position = Vector2(30, -14.999999)
 scale = Vector2(0.07665334, 0.06763529)
 texture = ExtResource("2_1jki2")
