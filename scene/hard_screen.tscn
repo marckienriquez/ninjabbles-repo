@@ -240,7 +240,6 @@ target_position = Vector2(27.69231, 10.769232)
 [node name="Summary" parent="CanvasLayer" unique_id=697079022 instance=ExtResource("5_7i4e8")]
 
 [node name="BlockEditor" type="Panel" parent="CanvasLayer" unique_id=912800315]
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -270,7 +269,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_rldx7")
 icon = ExtResource("8_safri")
 expand_icon = true
 
-[node name="BlockList" type="VBoxContainer" parent="CanvasLayer/BlockEditor" unique_id=1590567492]
+[node name="BlockList" type="VBoxContainer" parent="CanvasLayer/BlockEditor" unique_id=897640847]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
@@ -304,7 +303,7 @@ block_text = "Slide"
 layout_mode = 2
 block_text = "Punch"
 
-[node name="DropArea" type="VBoxContainer" parent="CanvasLayer/BlockEditor" unique_id=433798089 groups=["drop_area"]]
+[node name="DropArea" type="VFlowContainer" parent="CanvasLayer/BlockEditor" unique_id=489699779 groups=["drop_area"]]
 layout_mode = 0
 anchor_left = 1.0
 anchor_right = 1.0
@@ -356,6 +355,7 @@ vertical_alignment = 1
 uppercase = true
 
 [node name="Instructions" type="TextureRect" parent="CanvasLayer" unique_id=323049410]
+visible = false
 anchors_preset = -1
 anchor_left = 0.499
 anchor_top = 0.049000002

@@ -44,7 +44,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_rldx7")
 icon = ExtResource("3_wrvt0")
 expand_icon = true
 
-[node name="BlockList" type="VBoxContainer" parent="." unique_id=1590567492]
+[node name="BlockList" type="VBoxContainer" parent="." unique_id=444105723]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
@@ -66,7 +66,7 @@ block_text = "Move left"
 layout_mode = 2
 block_text = "Jump"
 
-[node name="DropArea" type="VBoxContainer" parent="." unique_id=433798089 groups=["drop_area"]]
+[node name="DropArea" type="VFlowContainer" parent="." unique_id=1401797702 groups=["drop_area"]]
 layout_mode = 0
 anchor_left = 1.0
 anchor_right = 1.0

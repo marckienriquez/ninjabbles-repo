@@ -262,7 +262,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_rldx7")
 icon = ExtResource("9_v58g8")
 expand_icon = true
 
-[node name="BlockList" type="VBoxContainer" parent="CanvasLayer/BlockEditor" unique_id=1590567492]
+[node name="BlockList" type="VBoxContainer" parent="CanvasLayer/BlockEditor" unique_id=158513202]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
@@ -288,7 +288,7 @@ block_text = "Jump"
 layout_mode = 2
 block_text = "Climb"
 
-[node name="DropArea" type="VBoxContainer" parent="CanvasLayer/BlockEditor" unique_id=433798089 groups=["drop_area"]]
+[node name="DropArea" type="VFlowContainer" parent="CanvasLayer/BlockEditor" unique_id=968651851 groups=["drop_area"]]
 layout_mode = 0
 anchor_left = 1.0
 anchor_right = 1.0
