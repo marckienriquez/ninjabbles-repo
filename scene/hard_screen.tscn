@@ -14,6 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://b6qca3bcm0v2y" path="res://asset/others/scroll-long.png" id="11_aw72e"]
 [ext_resource type="FontFile" uid="uid://3qsftis2m7nf" path="res://asset/PixelifySans-VariableFont_wght.ttf" id="12_87sjf"]
 [ext_resource type="PackedScene" uid="uid://w6ju4me3dphe" path="res://scene/ladder.tscn.tscn" id="13_efj10"]
+[ext_resource type="Script" uid="uid://hubdrtesio54" path="res://scripts/timer.gd" id="14_pm4ap"]
+[ext_resource type="Texture2D" uid="uid://bmx1scorbmo76" path="res://asset/others/scroll-timer.png" id="15_tgv2f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0hyr4"]
 texture = ExtResource("2_s3cvn")
@@ -190,7 +192,11 @@ texture = ExtResource("6_hmo0j")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rldx7"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4hgsv"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dacax"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s3cvn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jjpml"]
 
 [node name="Hard Screen" type="Node2D" unique_id=1497751499]
 script = ExtResource("1_s3cvn")
@@ -240,6 +246,7 @@ target_position = Vector2(27.69231, 10.769232)
 [node name="Summary" parent="CanvasLayer" unique_id=697079022 instance=ExtResource("5_7i4e8")]
 
 [node name="BlockEditor" type="Panel" parent="CanvasLayer" unique_id=912800315]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -392,21 +399,33 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="Instructions" type="TextureRect" parent="CanvasLayer" unique_id=323049410]
-visible = false
-anchors_preset = -1
-anchor_left = 0.499
-anchor_top = 0.049000002
-anchor_right = 0.499
-anchor_bottom = 0.049000002
-offset_left = -264.84802
-offset_top = -13.752001
-offset_right = 264.90198
-offset_bottom = 120.248
+[node name="Instructions" type="Panel" parent="CanvasLayer" unique_id=54855445]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_dacax")
+
+[node name="InstructionsTexture" type="TextureRect" parent="CanvasLayer/Instructions" unique_id=649932777]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -266.0
+offset_top = 29.0
+offset_right = 263.75
+offset_bottom = 163.0
 grow_horizontal = 2
 texture = ExtResource("11_aw72e")
 
-[node name="CloseInstructionsButton" type="Button" parent="CanvasLayer/Instructions" unique_id=167173745]
+[node name="CloseInstructionsButton" type="Button" parent="CanvasLayer/Instructions/InstructionsTexture" unique_id=1703131252]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.98
@@ -418,32 +437,143 @@ offset_top = -29.533998
 offset_right = 28.84497
 offset_bottom = 29.466
 grow_horizontal = 0
-theme_override_styles/normal = SubResource("StyleBoxEmpty_4hgsv")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_s3cvn")
 icon = ExtResource("8_safri")
 expand_icon = true
 
-[node name="Label" type="Label" parent="CanvasLayer/Instructions" unique_id=1323980421]
+[node name="Label" type="Label" parent="CanvasLayer/Instructions/InstructionsTexture" unique_id=257695228]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -193.875
-offset_top = -51.0
-offset_right = 201.125
-offset_bottom = 59.0
+offset_left = -181.875
+offset_top = -50.0
+offset_right = 188.125
+offset_bottom = 42.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = -2
+theme_override_constants/paragraph_spacing = 0
 theme_override_fonts/font = ExtResource("12_87sjf")
 theme_override_font_sizes/font_size = 16
-text = "Atop the frozen peaks rests the Primordial Flame, bending to the will of its bearer, offering warmth or ruin. Our village stands unguarded against the cold. With this flame, it shall endure. Prove your worth. Take the flame… and return.
-"
+text = "Atop the frozen peaks rests the Primordial Flame, bending to the will of its bearer, offering warmth or ruin. Our village stands unguarded against the cold. With this flame, it shall endure. Prove your worth. Take the flame… and return."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="TimerPanel" type="Panel" parent="CanvasLayer" unique_id=1334587516]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 323.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_jjpml")
+script = ExtResource("14_pm4ap")
+
+[node name="TimerTexture" type="TextureRect" parent="CanvasLayer/TimerPanel" unique_id=1826997780]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -166.0
+offset_top = 9.0
+offset_right = -7.0
+offset_bottom = 80.0
+grow_horizontal = 0
+texture = ExtResource("15_tgv2f")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/TimerPanel/TimerTexture" unique_id=1652975858]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -30.0
+offset_right = 64.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_87sjf")
+theme_override_font_sizes/font_size = 50
+text = "00:25"
+
+[node name="Timer" type="Timer" parent="CanvasLayer/TimerPanel/TimerTexture/Label" unique_id=1023875439]
+wait_time = 300.0
+one_shot = true
+
+[node name="RetryButton" type="Button" parent="CanvasLayer/TimerPanel" unique_id=1596945264]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -132.0
+offset_top = -47.0
+offset_right = 132.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("11_aw72e")
+flat = true
+
+[node name="Label" type="Label" parent="CanvasLayer/TimerPanel/RetryButton" unique_id=1289277008]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = -35.0
+offset_right = 66.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_87sjf")
+theme_override_font_sizes/font_size = 16
+text = "Time has run out"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Label2" type="Label" parent="CanvasLayer/TimerPanel/RetryButton" unique_id=1081827907]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.0
+offset_top = -21.0
+offset_right = 60.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8117647, 0.48235294, 0.3019608, 1)
+theme_override_fonts/font = ExtResource("12_87sjf")
+theme_override_font_sizes/font_size = 42
+text = "RETRY"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
 
 [node name="Ladder_tscn" parent="." unique_id=841041022 instance=ExtResource("13_efj10")]
 position = Vector2(89, -8)
