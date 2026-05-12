@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://3fniryiurye3" path="res://asset/others/Gemini_Generated_Image_d7j3qtd7j3qtd7j3.png" id="2_3d84v"]
 [ext_resource type="Texture2D" uid="uid://c6wceuafycaaa" path="res://asset/sprites/world_tileset.png" id="2_iwwbg"]
 [ext_resource type="PackedScene" uid="uid://ldwgdl8gsc84" path="res://scene/easy_end.tscn" id="4_qfuf4"]
-[ext_resource type="PackedScene" uid="uid://tc4g6mg40ir2" path="res://scene/summary_easy.tscn" id="6_gm46g"]
+[ext_resource type="PackedScene" path="res://scene/summary_easy.tscn" id="6_gm46g"]
 [ext_resource type="Texture2D" uid="uid://b6qca3bcm0v2y" path="res://asset/others/scroll-long.png" id="6_rldx7"]
 [ext_resource type="Texture2D" uid="uid://cw7jqa5fid72l" path="res://asset/others/shuriken.png" id="8_dacax"]
 [ext_resource type="FontFile" uid="uid://3qsftis2m7nf" path="res://asset/PixelifySans-VariableFont_wght.ttf" id="8_rldx7"]
@@ -219,10 +219,6 @@ position_smoothing_enabled = true
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=980286520]
 
 [node name="Summary" parent="CanvasLayer" unique_id=697079022 instance=ExtResource("6_gm46g")]
-offset_left = -575.0
-offset_top = -332.0
-offset_right = 576.0
-offset_bottom = 319.0
 
 [node name="Instructions" type="TextureRect" parent="CanvasLayer" unique_id=323049410]
 anchors_preset = -1

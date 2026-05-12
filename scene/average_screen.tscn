@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c6wceuafycaaa" path="res://asset/sprites/world_tileset.png" id="2_ucndy"]
 [ext_resource type="PackedScene" uid="uid://uh5hwrjq757g" path="res://scene/avatar_greenie.tscn" id="3_24r81"]
 [ext_resource type="PackedScene" uid="uid://dclxaeh0ab8fp" path="res://scene/average_end.tscn" id="4_rioux"]
-[ext_resource type="PackedScene" uid="uid://dcnhu6vm6nhas" path="res://scene/summary_average.tscn" id="6_0hyr4"]
+[ext_resource type="PackedScene" path="res://scene/summary_average.tscn" id="6_0hyr4"]
 [ext_resource type="Script" uid="uid://dp78yxcki228b" path="res://scripts/block_editor.gd" id="6_v58g8"]
 [ext_resource type="PackedScene" uid="uid://c01l7y0eqi4l5" path="res://scene/code_block.tscn" id="7_0hyr4"]
 [ext_resource type="Texture2D" uid="uid://drj8srr5bq7af" path="res://asset/others/scroll-big.png" id="7_rioux"]
@@ -232,7 +232,6 @@ position_smoothing_enabled = true
 [node name="Summary" parent="CanvasLayer" unique_id=697079022 instance=ExtResource("6_0hyr4")]
 
 [node name="BlockEditor" type="Panel" parent="CanvasLayer" unique_id=912800315]
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -262,7 +261,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_rldx7")
 icon = ExtResource("9_v58g8")
 expand_icon = true
 
-[node name="BlockList" type="VBoxContainer" parent="CanvasLayer/BlockEditor" unique_id=158513202]
+[node name="BlockList" type="VBoxContainer" parent="CanvasLayer/BlockEditor" unique_id=444105723]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
@@ -284,11 +283,11 @@ block_text = "Move left"
 layout_mode = 2
 block_text = "Jump"
 
-[node name="CodeBlock4" parent="CanvasLayer/BlockEditor/BlockList" unique_id=97962079 instance=ExtResource("7_0hyr4")]
+[node name="CodeBlock4" parent="CanvasLayer/BlockEditor/BlockList" unique_id=1016598377 instance=ExtResource("7_0hyr4")]
 layout_mode = 2
 block_text = "Climb"
 
-[node name="DropArea" type="VFlowContainer" parent="CanvasLayer/BlockEditor" unique_id=968651851 groups=["drop_area"]]
+[node name="DropArea" type="VFlowContainer" parent="CanvasLayer/BlockEditor" unique_id=1401797702 groups=["drop_area"]]
 layout_mode = 0
 anchor_left = 1.0
 anchor_right = 1.0
@@ -302,7 +301,7 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("8_jnqrk")
 
-[node name="RunButton" type="Button" parent="CanvasLayer/BlockEditor" unique_id=1254735476]
+[node name="RunButton" type="Button" parent="CanvasLayer/BlockEditor" unique_id=1597778863]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -318,7 +317,7 @@ grow_vertical = 0
 icon = ExtResource("12_0hyr4")
 flat = true
 
-[node name="Label" type="Label" parent="CanvasLayer/BlockEditor/RunButton" unique_id=606254386]
+[node name="Label" type="Label" parent="CanvasLayer/BlockEditor/RunButton" unique_id=1650909785]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -335,6 +334,44 @@ theme_override_colors/font_color = Color(0.8117647, 0.48235294, 0.3019608, 1)
 theme_override_fonts/font = ExtResource("13_jnqrk")
 theme_override_font_sizes/font_size = 42
 text = "Run"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="ClearButton" type="Button" parent="CanvasLayer/BlockEditor" unique_id=1254735476]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.83300006
+anchor_top = 0.90400004
+anchor_right = 0.83300006
+anchor_bottom = 0.90400004
+offset_left = -92.36603
+offset_top = -33.63553
+offset_right = 91.63397
+offset_bottom = 33.36447
+grow_horizontal = 2
+grow_vertical = 0
+icon = ExtResource("12_0hyr4")
+flat = true
+expand_icon = true
+
+[node name="Label" type="Label" parent="CanvasLayer/BlockEditor/ClearButton" unique_id=606254386]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.999985
+offset_top = -28.5
+offset_right = 63.000015
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8117647, 0.48235294, 0.3019608, 1)
+theme_override_fonts/font = ExtResource("13_jnqrk")
+theme_override_font_sizes/font_size = 35
+text = "clear"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
