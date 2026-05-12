@@ -18,11 +18,16 @@ config/icon="res://icon.svg"
 [autoload]
 
 GlobalData="*uid://cti4k54b7icb1"
+AudioStreamBgMusic="*uid://cmt1hgdegb26t"
 
 [display]
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[global_group]
+
+character=""
 
 [physics]
 
@@ -33,3 +38,4 @@ window/stretch/aspect="expand"
 
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
+textures/vram_compression/import_etc2_astc=true

@@ -1,4 +1,4 @@
-extends VBoxContainer
+extends VFlowContainer
 
 func _ready():
 	# Ensuring the group is set via code just in case

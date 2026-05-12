@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cmt1hgdegb26t"]
+
+[ext_resource type="AudioStream" uid="uid://ed6vg0jaq46b" path="res://music/Eric Skiff - Underclocked ♫ NO COPYRIGHT 8-bit Music + Background.mp3" id="1_d665o"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" unique_id=1635024236]
+stream = ExtResource("1_d665o")
+autoplay = true
