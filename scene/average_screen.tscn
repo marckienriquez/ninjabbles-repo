@@ -6,16 +6,23 @@
 [ext_resource type="PackedScene" uid="uid://uh5hwrjq757g" path="res://scene/avatar_greenie.tscn" id="3_24r81"]
 [ext_resource type="PackedScene" uid="uid://dclxaeh0ab8fp" path="res://scene/average_end.tscn" id="4_rioux"]
 [ext_resource type="PackedScene" uid="uid://dcnhu6vm6nhas" path="res://scene/summary_average.tscn" id="6_0hyr4"]
+[ext_resource type="AudioStream" uid="uid://bi8rcghmnsxfp" path="res://music/sfx_move.mp3" id="6_airsi"]
 [ext_resource type="Script" uid="uid://dp78yxcki228b" path="res://scripts/block_editor.gd" id="6_v58g8"]
 [ext_resource type="PackedScene" uid="uid://c01l7y0eqi4l5" path="res://scene/code_block.tscn" id="7_0hyr4"]
 [ext_resource type="Texture2D" uid="uid://drj8srr5bq7af" path="res://asset/others/scroll-big.png" id="7_rioux"]
+[ext_resource type="AudioStream" uid="uid://dvp2s2a8oviy2" path="res://music/sfx_jump.mp3" id="7_vlvxi"]
+[ext_resource type="AudioStream" uid="uid://b2lc341m03t3c" path="res://music/sfx_climb.mp3" id="8_3il77"]
 [ext_resource type="Script" uid="uid://1ce37dqiver7" path="res://scripts/drop_area.gd" id="8_jnqrk"]
+[ext_resource type="AudioStream" uid="uid://d1pmi22m2lio5" path="res://music/sfx_slide.mp3" id="9_cm5sm"]
 [ext_resource type="Texture2D" uid="uid://cw7jqa5fid72l" path="res://asset/others/shuriken.png" id="9_v58g8"]
+[ext_resource type="AudioStream" uid="uid://dibdtfguinbsl" path="res://music/sfx_punch.mp3" id="10_gvqtw"]
 [ext_resource type="PackedScene" uid="uid://w6ju4me3dphe" path="res://scene/ladder.tscn.tscn" id="11_1ivf0"]
+[ext_resource type="AudioStream" uid="uid://du1rvt01ghs8g" path="res://music/sfx_dead.mp3" id="11_vlvxi"]
 [ext_resource type="Texture2D" uid="uid://b6qca3bcm0v2y" path="res://asset/others/scroll-long.png" id="12_0hyr4"]
 [ext_resource type="FontFile" uid="uid://3qsftis2m7nf" path="res://asset/PixelifySans-VariableFont_wght.ttf" id="13_jnqrk"]
 [ext_resource type="Script" uid="uid://hubdrtesio54" path="res://scripts/timer.gd" id="14_4hgsv"]
 [ext_resource type="Texture2D" uid="uid://bmx1scorbmo76" path="res://asset/others/scroll-timer.png" id="15_ww6gl"]
+[ext_resource type="AudioStream" uid="uid://dchqrj003eqg" path="res://music/aud_average.mp3" id="23_3il77"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0hyr4"]
 texture = ExtResource("2_ucndy")
@@ -227,11 +234,19 @@ position = Vector2(812, -224)
 [node name="avatar_greenie" parent="." unique_id=243584308 instance=ExtResource("3_24r81")]
 position = Vector2(-18, 3.0000002)
 disable_mode = 2
+sfx_move = ExtResource("6_airsi")
+sfx_jump = ExtResource("7_vlvxi")
+sfx_climb = ExtResource("8_3il77")
+sfx_slide = ExtResource("9_cm5sm")
+sfx_punch = ExtResource("10_gvqtw")
+sfx_dead = ExtResource("11_vlvxi")
 
 [node name="Camera2D" type="Camera2D" parent="avatar_greenie" unique_id=2135087708]
 position = Vector2(102, -39)
 zoom = Vector2(3, 3)
 position_smoothing_enabled = true
+
+[node name="SfxPlayer" type="AudioStreamPlayer2D" parent="avatar_greenie" unique_id=301286706]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=271368119]
 
@@ -615,3 +630,8 @@ position = Vector2(520, -199)
 
 [node name="Ladder_tscn19" parent="." unique_id=1975659182 instance=ExtResource("11_1ivf0")]
 position = Vector2(520, -215)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1140065176]
+stream = ExtResource("23_3il77")
+volume_db = -10.0
+autoplay = true

@@ -5,13 +5,20 @@
 [ext_resource type="Texture2D" uid="uid://3fniryiurye3" path="res://asset/others/Gemini_Generated_Image_d7j3qtd7j3qtd7j3.png" id="2_3d84v"]
 [ext_resource type="Texture2D" uid="uid://c6wceuafycaaa" path="res://asset/sprites/world_tileset.png" id="2_iwwbg"]
 [ext_resource type="PackedScene" uid="uid://ldwgdl8gsc84" path="res://scene/easy_end.tscn" id="4_qfuf4"]
+[ext_resource type="AudioStream" uid="uid://bi8rcghmnsxfp" path="res://music/sfx_move.mp3" id="6_7xclc"]
 [ext_resource type="PackedScene" uid="uid://tc4g6mg40ir2" path="res://scene/summary_easy.tscn" id="6_gm46g"]
 [ext_resource type="Texture2D" uid="uid://b6qca3bcm0v2y" path="res://asset/others/scroll-long.png" id="6_rldx7"]
+[ext_resource type="AudioStream" uid="uid://dvp2s2a8oviy2" path="res://music/sfx_jump.mp3" id="7_5o7s0"]
+[ext_resource type="AudioStream" uid="uid://b2lc341m03t3c" path="res://music/sfx_climb.mp3" id="8_c48df"]
 [ext_resource type="Texture2D" uid="uid://cw7jqa5fid72l" path="res://asset/others/shuriken.png" id="8_dacax"]
 [ext_resource type="FontFile" uid="uid://3qsftis2m7nf" path="res://asset/PixelifySans-VariableFont_wght.ttf" id="8_rldx7"]
+[ext_resource type="AudioStream" uid="uid://d1pmi22m2lio5" path="res://music/sfx_slide.mp3" id="9_opevt"]
 [ext_resource type="PackedScene" uid="uid://7gqsivhlhcpg" path="res://scene/block_editor.tscn" id="10_gm46g"]
+[ext_resource type="AudioStream" uid="uid://dibdtfguinbsl" path="res://music/sfx_punch.mp3" id="10_xfq0e"]
+[ext_resource type="AudioStream" uid="uid://du1rvt01ghs8g" path="res://music/sfx_dead.mp3" id="11_5o7s0"]
 [ext_resource type="Texture2D" uid="uid://bmx1scorbmo76" path="res://asset/others/scroll-timer.png" id="11_ivbv5"]
 [ext_resource type="Script" uid="uid://hubdrtesio54" path="res://scripts/timer.gd" id="12_jjpml"]
+[ext_resource type="AudioStream" uid="uid://dt4heuw6bmix0" path="res://music/aud_easy.mp3" id="19_c48df"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gm46g"]
 texture = ExtResource("2_iwwbg")
@@ -216,11 +223,19 @@ position = Vector2(840, -131)
 
 [node name="avatar_greenie" parent="." unique_id=243584308 instance=ExtResource("1_3gtbw")]
 position = Vector2(-12.000002, 3.0000002)
+sfx_move = ExtResource("6_7xclc")
+sfx_jump = ExtResource("7_5o7s0")
+sfx_climb = ExtResource("8_c48df")
+sfx_slide = ExtResource("9_opevt")
+sfx_punch = ExtResource("10_xfq0e")
+sfx_dead = ExtResource("11_5o7s0")
 
 [node name="Camera2D" type="Camera2D" parent="avatar_greenie" unique_id=1892925222]
 position = Vector2(102, -39)
 zoom = Vector2(3, 3)
 position_smoothing_enabled = true
+
+[node name="SfxPlayer" type="AudioStreamPlayer2D" parent="avatar_greenie" unique_id=183496356]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=980286520]
 
@@ -404,3 +419,8 @@ text = "RETRY"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1209496841]
+stream = ExtResource("19_c48df")
+volume_db = -10.0
+autoplay = true

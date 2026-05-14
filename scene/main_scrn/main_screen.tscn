@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dgpk3vlc38gju" path="res://asset/others/8-bit-scroll-medieval-parchment-vector-52841144-removebg-preview 2.png" id="4_y7tem"]
 [ext_resource type="Texture2D" uid="uid://besudc40o6s3u" path="res://asset/others/game_logo.png" id="5_pvfca"]
 [ext_resource type="Texture2D" uid="uid://cfiobas82cw0v" path="res://asset/others/start_btn.png" id="6_pvfca"]
+[ext_resource type="AudioStream" uid="uid://rkm68fbh4fs6" path="res://music/aud_main.mp3" id="7_d0jji"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fh1u8"]
 texture = ExtResource("2_h88a4")
@@ -213,5 +214,10 @@ texture_normal = ExtResource("6_pvfca")
 texture_pressed = ExtResource("6_pvfca")
 ignore_texture_size = true
 stretch_mode = 5
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1117316028]
+stream = ExtResource("7_d0jji")
+volume_db = -10.0
+autoplay = true
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

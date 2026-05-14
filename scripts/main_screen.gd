@@ -11,4 +11,5 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_texture_button_pressed() -> void:
+	$AudioStreamPlayer.stop()
 	get_tree().change_scene_to_file("res://scene/easy_screen.tscn")
