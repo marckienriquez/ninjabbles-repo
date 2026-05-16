@@ -1,0 +1,181 @@
+[gd_scene format=3 uid="uid://cago2eb50hun1"]
+
+[ext_resource type="Script" uid="uid://bqdgymp3cx6h" path="res://scene/character_select.gd" id="1_0q86x"]
+[ext_resource type="Texture2D" uid="uid://b5l8jc80723fb" path="res://asset/others/360_F_986546394_d3jsxWIbjIcANAs4evAM6x9QsC5n2EVS.jpg" id="2_oo4xk"]
+[ext_resource type="Texture2D" uid="uid://qh1x2bu22ejj" path="res://asset/others/selection_bar.png" id="3_5m43v"]
+[ext_resource type="Texture2D" uid="uid://dvpihxrg00mpi" path="res://asset/others/back.png" id="4_lkekb"]
+[ext_resource type="Texture2D" uid="uid://dyen85ptriu1k" path="res://asset/others/play.png" id="5_i3lkr"]
+[ext_resource type="SpriteFrames" uid="uid://bskxeacespa2q" path="res://asset/sprites/midori_idle.tres" id="6_d4oux"]
+[ext_resource type="Texture2D" uid="uid://cr0jb67no34fd" path="res://asset/others/arrow.png" id="7_f43ms"]
+[ext_resource type="Texture2D" uid="uid://drj8srr5bq7af" path="res://asset/others/scroll-big.png" id="8_sq00v"]
+[ext_resource type="FontFile" uid="uid://3qsftis2m7nf" path="res://asset/PixelifySans-VariableFont_wght.ttf" id="9_xc1ki"]
+[ext_resource type="Texture2D" uid="uid://crxb28p121c8t" path="res://asset/others/midori.png" id="10_mtqm2"]
+[ext_resource type="Texture2D" uid="uid://bgbh10nb5cbsr" path="res://asset/others/wakai.png" id="11_837ch"]
+[ext_resource type="Texture2D" uid="uid://daujwkn4dq7t1" path="res://asset/others/ao.png" id="12_pr6dy"]
+
+[node name="CharacterSelect" type="Node2D" unique_id=63979989]
+script = ExtResource("1_0q86x")
+
+[node name="Background" type="TextureRect" parent="." unique_id=2003917849]
+offset_right = 1151.0
+offset_bottom = 638.0
+texture = ExtResource("2_oo4xk")
+
+[node name="Control" type="Control" parent="." unique_id=118433756]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Selection_bar" type="TextureRect" parent="Control" unique_id=324703992]
+layout_mode = 0
+offset_top = 280.0
+offset_right = 643.0
+offset_bottom = 360.0
+texture = ExtResource("3_5m43v")
+
+[node name="Back" type="TextureButton" parent="Control" unique_id=1981358304]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 12.0
+offset_right = 743.0
+offset_bottom = 368.0
+scale = Vector2(0.15, 0.15)
+texture_normal = ExtResource("4_lkekb")
+
+[node name="Play" type="TextureButton" parent="Control" unique_id=160264536]
+layout_mode = 0
+offset_left = 461.0
+offset_top = 172.0
+offset_right = 1203.0
+offset_bottom = 667.0
+scale = Vector2(0.25, 0.25)
+texture_normal = ExtResource("5_i3lkr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control" unique_id=1316913517]
+position = Vector2(302, 170)
+scale = Vector2(0.6783333, 0.6783333)
+sprite_frames = ExtResource("6_d4oux")
+
+[node name="move_right" type="TextureButton" parent="Control" unique_id=494554928]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 301.0
+offset_right = 1348.0
+offset_bottom = 1091.0
+scale = Vector2(0.04, 0.04)
+texture_normal = ExtResource("7_f43ms")
+
+[node name="move_left" type="TextureButton" parent="Control" unique_id=32483952]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 302.0
+offset_right = 988.0
+offset_bottom = 1092.0
+scale = Vector2(0.04, 0.04)
+texture_normal = ExtResource("7_f43ms")
+flip_h = true
+
+[node name="desc_bg" type="TextureRect" parent="Control" unique_id=303915952]
+layout_mode = 0
+offset_left = 10.000001
+offset_top = 111.0
+offset_right = 266.0
+offset_bottom = 273.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("8_sq00v")
+
+[node name="char_name" type="Label" parent="Control" unique_id=27133917]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -152.5
+offset_right = 152.5
+offset_bottom = 49.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.45000005, 0, 1)
+theme_override_colors/font_outline_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("9_xc1ki")
+theme_override_font_sizes/font_size = 40
+text = "CHAR NAME HERE"
+horizontal_alignment = 1
+
+[node name="char_desc" type="Label" parent="Control" unique_id=1595484797]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 30.0
+offset_top = -53.0
+offset_right = 172.0
+offset_bottom = 32.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_fonts/font = ExtResource("9_xc1ki")
+theme_override_font_sizes/font_size = 10
+text = "CHAR NAME HERE"
+autowrap_mode = 2
+
+[node name="current_char" type="TextureButton" parent="Control" unique_id=1695413518]
+layout_mode = 1
+offset_left = 290.0
+offset_top = 290.0
+offset_right = 571.0
+offset_bottom = 590.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("10_mtqm2")
+
+[node name="prev_char" type="TextureButton" parent="Control" unique_id=610103045]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -131.5
+offset_top = -58.0
+offset_right = 150.5
+offset_bottom = 242.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("11_837ch")
+
+[node name="next_char" type="TextureButton" parent="Control" unique_id=2141360673]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 88.5
+offset_top = -58.0
+offset_right = 373.5
+offset_bottom = 242.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("12_pr6dy")
+
+[node name="in_use" type="Label" parent="Control" unique_id=1593380496]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -65.5
+offset_top = 56.0
+offset_right = 76.5
+offset_bottom = 81.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.99999994, 0.17417294, 0.12721592, 1)
+theme_override_colors/font_outline_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_fonts/font = ExtResource("9_xc1ki")
+theme_override_font_sizes/font_size = 20
+text = "SELECTED"
+horizontal_alignment = 1
