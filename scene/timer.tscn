@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://ck8y64ewmtue0"]
+
+[ext_resource type="Script" uid="uid://hubdrtesio54" path="res://scripts/timer.gd" id="1_4vihf"]
+[ext_resource type="Texture2D" uid="uid://bmx1scorbmo76" path="res://asset/others/scroll-timer.png" id="2_i2f8w"]
+[ext_resource type="FontFile" uid="uid://3qsftis2m7nf" path="res://asset/PixelifySans-VariableFont_wght.ttf" id="3_0kgxb"]
+[ext_resource type="Texture2D" uid="uid://b6qca3bcm0v2y" path="res://asset/others/scroll-long.png" id="4_7518e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jjpml"]
+
+[node name="TimerPanel" type="Panel" unique_id=1334587516]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 323.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_jjpml")
+script = ExtResource("1_4vihf")
+
+[node name="TimerTexture" type="TextureRect" parent="." unique_id=1826997780]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -166.0
+offset_top = 9.0
+offset_right = -7.0
+offset_bottom = 80.0
+grow_horizontal = 0
+texture = ExtResource("2_i2f8w")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="TimerTexture" unique_id=1652975858]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -30.0
+offset_right = 64.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0kgxb")
+theme_override_font_sizes/font_size = 50
+text = "00:25"
+
+[node name="Timer" type="Timer" parent="TimerTexture/Label" unique_id=1023875439]
+wait_time = 120.0
+one_shot = true
+
+[node name="RetryButton" type="Button" parent="." unique_id=1596945264]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -132.0
+offset_top = -47.0
+offset_right = 132.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("4_7518e")
+flat = true
+
+[node name="Label" type="Label" parent="RetryButton" unique_id=1289277008]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = -35.0
+offset_right = 66.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0kgxb")
+theme_override_font_sizes/font_size = 16
+text = "Time has run out"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Label2" type="Label" parent="RetryButton" unique_id=1081827907]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.0
+offset_top = -21.0
+offset_right = 60.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8117647, 0.48235294, 0.3019608, 1)
+theme_override_fonts/font = ExtResource("3_0kgxb")
+theme_override_font_sizes/font_size = 42
+text = "RETRY"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true

@@ -1,13 +1,26 @@
 extends Control
 
-signal run_pressed 
-
 @onready var drop_area = $DropArea
 @onready var run_button = $RunButton
-
+@onready var clear_button = $ClearButton
 
 func _ready():
 	run_button.pressed.connect(_on_run_pressed)
+	clear_button.pressed.connect(_on_clear_pressed)
+
+func _on_clear_pressed():
+	# Check if the drop_area exists to avoid null reference errors
+	if drop_area:
+		# Iterate through all blocks currently in the drop area
+		for child in drop_area.get_children():
+			child.queue_free()
+		
+		# Optional: If your drop_area has a custom internal list/array 
+		# for logic tracking, you might need to clear it too:
+		if drop_area.has_method("clear_internal_commands"):
+			drop_area.clear_internal_commands()
+	else:
+		print("Error: drop_area node not found!")
 
 func _on_run_pressed():
 	# 1. Specifically look for the Ninja node in the current scene [cite: 1]

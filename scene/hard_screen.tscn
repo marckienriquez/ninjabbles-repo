@@ -6,14 +6,23 @@
 [ext_resource type="PackedScene" uid="uid://uh5hwrjq757g" path="res://scene/avatar_greenie.tscn" id="4_pm4ap"]
 [ext_resource type="PackedScene" uid="uid://bp08ny4h3ypjh" path="res://scene/hard_end.tscn" id="4_s3cvn"]
 [ext_resource type="PackedScene" uid="uid://djcxdg7s8f2v0" path="res://scene/summary_hard.tscn" id="5_7i4e8"]
+[ext_resource type="AudioStream" uid="uid://bi8rcghmnsxfp" path="res://music/sfx_move.mp3" id="6_3mvhc"]
 [ext_resource type="Texture2D" uid="uid://drj8srr5bq7af" path="res://asset/others/scroll-big.png" id="6_hmo0j"]
+[ext_resource type="AudioStream" uid="uid://dvp2s2a8oviy2" path="res://music/sfx_jump.mp3" id="7_aw72e"]
 [ext_resource type="Script" uid="uid://dp78yxcki228b" path="res://scripts/block_editor.gd" id="7_g5xxq"]
+[ext_resource type="AudioStream" uid="uid://b2lc341m03t3c" path="res://music/sfx_climb.mp3" id="8_87sjf"]
 [ext_resource type="Texture2D" uid="uid://cw7jqa5fid72l" path="res://asset/others/shuriken.png" id="8_safri"]
+[ext_resource type="AudioStream" uid="uid://d1pmi22m2lio5" path="res://music/sfx_slide.mp3" id="9_efj10"]
 [ext_resource type="PackedScene" uid="uid://c01l7y0eqi4l5" path="res://scene/code_block.tscn" id="9_k6l4j"]
 [ext_resource type="Script" uid="uid://1ce37dqiver7" path="res://scripts/drop_area.gd" id="10_3mvhc"]
+[ext_resource type="AudioStream" uid="uid://dibdtfguinbsl" path="res://music/sfx_punch.mp3" id="10_mgb7w"]
+[ext_resource type="AudioStream" uid="uid://du1rvt01ghs8g" path="res://music/sfx_dead.mp3" id="11_7sv2a"]
 [ext_resource type="Texture2D" uid="uid://b6qca3bcm0v2y" path="res://asset/others/scroll-long.png" id="11_aw72e"]
 [ext_resource type="FontFile" uid="uid://3qsftis2m7nf" path="res://asset/PixelifySans-VariableFont_wght.ttf" id="12_87sjf"]
 [ext_resource type="PackedScene" uid="uid://w6ju4me3dphe" path="res://scene/ladder.tscn.tscn" id="13_efj10"]
+[ext_resource type="Script" uid="uid://hubdrtesio54" path="res://scripts/timer.gd" id="14_pm4ap"]
+[ext_resource type="Texture2D" uid="uid://bmx1scorbmo76" path="res://asset/others/scroll-timer.png" id="15_tgv2f"]
+[ext_resource type="AudioStream" uid="uid://rodvpnfmyaul" path="res://music/aud_hard.mp3" id="23_aw72e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0hyr4"]
 texture = ExtResource("2_s3cvn")
@@ -190,7 +199,11 @@ texture = ExtResource("6_hmo0j")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rldx7"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4hgsv"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dacax"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s3cvn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jjpml"]
 
 [node name="Hard Screen" type="Node2D" unique_id=1497751499]
 script = ExtResource("1_s3cvn")
@@ -225,6 +238,12 @@ position = Vector2(1072, -191)
 [node name="avatar_greenie" parent="." unique_id=243584308 instance=ExtResource("4_pm4ap")]
 position = Vector2(-45, 4)
 disable_mode = 2
+sfx_move = ExtResource("6_3mvhc")
+sfx_jump = ExtResource("7_aw72e")
+sfx_climb = ExtResource("8_87sjf")
+sfx_slide = ExtResource("9_efj10")
+sfx_punch = ExtResource("10_mgb7w")
+sfx_dead = ExtResource("11_7sv2a")
 
 [node name="Camera2D" type="Camera2D" parent="avatar_greenie" unique_id=2135087708]
 position = Vector2(102, -39)
@@ -235,11 +254,14 @@ position_smoothing_enabled = true
 position = Vector2(-4.615382, -24.615387)
 target_position = Vector2(27.69231, 10.769232)
 
+[node name="SfxPlayer" type="AudioStreamPlayer2D" parent="avatar_greenie" unique_id=1311498461]
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=271368119]
 
 [node name="Summary" parent="CanvasLayer" unique_id=697079022 instance=ExtResource("5_7i4e8")]
 
 [node name="BlockEditor" type="Panel" parent="CanvasLayer" unique_id=912800315]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -269,7 +291,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_rldx7")
 icon = ExtResource("8_safri")
 expand_icon = true
 
-[node name="BlockList" type="VBoxContainer" parent="CanvasLayer/BlockEditor" unique_id=897640847]
+[node name="BlockList" type="VBoxContainer" parent="CanvasLayer/BlockEditor" unique_id=444105723]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
@@ -291,19 +313,19 @@ block_text = "Move left"
 layout_mode = 2
 block_text = "Jump"
 
-[node name="CodeBlock4" parent="CanvasLayer/BlockEditor/BlockList" unique_id=97962079 instance=ExtResource("9_k6l4j")]
+[node name="CodeBlock4" parent="CanvasLayer/BlockEditor/BlockList" unique_id=1179147692 instance=ExtResource("9_k6l4j")]
 layout_mode = 2
 block_text = "Climb"
 
-[node name="CodeBlock5" parent="CanvasLayer/BlockEditor/BlockList" unique_id=373382484 instance=ExtResource("9_k6l4j")]
+[node name="CodeBlock5" parent="CanvasLayer/BlockEditor/BlockList" unique_id=649986078 instance=ExtResource("9_k6l4j")]
 layout_mode = 2
 block_text = "Slide"
 
-[node name="CodeBlock6" parent="CanvasLayer/BlockEditor/BlockList" unique_id=1460036608 instance=ExtResource("9_k6l4j")]
+[node name="CodeBlock6" parent="CanvasLayer/BlockEditor/BlockList" unique_id=960716934 instance=ExtResource("9_k6l4j")]
 layout_mode = 2
 block_text = "Punch"
 
-[node name="DropArea" type="VFlowContainer" parent="CanvasLayer/BlockEditor" unique_id=489699779 groups=["drop_area"]]
+[node name="DropArea" type="VFlowContainer" parent="CanvasLayer/BlockEditor" unique_id=1401797702 groups=["drop_area"]]
 layout_mode = 0
 anchor_left = 1.0
 anchor_right = 1.0
@@ -317,7 +339,7 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("10_3mvhc")
 
-[node name="RunButton" type="Button" parent="CanvasLayer/BlockEditor" unique_id=1254735476]
+[node name="RunButton" type="Button" parent="CanvasLayer/BlockEditor" unique_id=1597778863]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -333,7 +355,7 @@ grow_vertical = 0
 icon = ExtResource("11_aw72e")
 flat = true
 
-[node name="Label" type="Label" parent="CanvasLayer/BlockEditor/RunButton" unique_id=606254386]
+[node name="Label" type="Label" parent="CanvasLayer/BlockEditor/RunButton" unique_id=1650909785]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -354,21 +376,71 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="Instructions" type="TextureRect" parent="CanvasLayer" unique_id=323049410]
-visible = false
+[node name="ClearButton" type="Button" parent="CanvasLayer/BlockEditor" unique_id=1254735476]
+layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.499
-anchor_top = 0.049000002
-anchor_right = 0.499
-anchor_bottom = 0.049000002
-offset_left = -264.84802
-offset_top = -13.752001
-offset_right = 264.90198
-offset_bottom = 120.248
+anchor_left = 0.83300006
+anchor_top = 0.90400004
+anchor_right = 0.83300006
+anchor_bottom = 0.90400004
+offset_left = -92.36603
+offset_top = -33.63553
+offset_right = 91.63397
+offset_bottom = 33.36447
+grow_horizontal = 2
+grow_vertical = 0
+icon = ExtResource("11_aw72e")
+flat = true
+expand_icon = true
+
+[node name="Label" type="Label" parent="CanvasLayer/BlockEditor/ClearButton" unique_id=606254386]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.999985
+offset_top = -28.5
+offset_right = 63.000015
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8117647, 0.48235294, 0.3019608, 1)
+theme_override_fonts/font = ExtResource("12_87sjf")
+theme_override_font_sizes/font_size = 35
+text = "clear"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Instructions" type="Panel" parent="CanvasLayer" unique_id=54855445]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_dacax")
+
+[node name="InstructionsTexture" type="TextureRect" parent="CanvasLayer/Instructions" unique_id=649932777]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -266.0
+offset_top = 29.0
+offset_right = 263.75
+offset_bottom = 163.0
 grow_horizontal = 2
 texture = ExtResource("11_aw72e")
 
-[node name="CloseInstructionsButton" type="Button" parent="CanvasLayer/Instructions" unique_id=167173745]
+[node name="CloseInstructionsButton" type="Button" parent="CanvasLayer/Instructions/InstructionsTexture" unique_id=1703131252]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.98
@@ -380,32 +452,143 @@ offset_top = -29.533998
 offset_right = 28.84497
 offset_bottom = 29.466
 grow_horizontal = 0
-theme_override_styles/normal = SubResource("StyleBoxEmpty_4hgsv")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_s3cvn")
 icon = ExtResource("8_safri")
 expand_icon = true
 
-[node name="Label" type="Label" parent="CanvasLayer/Instructions" unique_id=1323980421]
+[node name="Label" type="Label" parent="CanvasLayer/Instructions/InstructionsTexture" unique_id=257695228]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -193.875
-offset_top = -51.0
-offset_right = 201.125
-offset_bottom = 59.0
+offset_left = -181.875
+offset_top = -50.0
+offset_right = 188.125
+offset_bottom = 42.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = -2
+theme_override_constants/paragraph_spacing = 0
 theme_override_fonts/font = ExtResource("12_87sjf")
 theme_override_font_sizes/font_size = 16
-text = "Atop the frozen peaks rests the Primordial Flame, bending to the will of its bearer, offering warmth or ruin. Our village stands unguarded against the cold. With this flame, it shall endure. Prove your worth. Take the flame… and return.
-"
+text = "Atop the frozen peaks rests the Primordial Flame, bending to the will of its bearer, offering warmth or ruin. Our village stands unguarded against the cold. With this flame, it shall endure. Prove your worth. Take the flame… and return."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="TimerPanel" type="Panel" parent="CanvasLayer" unique_id=1334587516]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 323.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_jjpml")
+script = ExtResource("14_pm4ap")
+
+[node name="TimerTexture" type="TextureRect" parent="CanvasLayer/TimerPanel" unique_id=1826997780]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -166.0
+offset_top = 9.0
+offset_right = -7.0
+offset_bottom = 80.0
+grow_horizontal = 0
+texture = ExtResource("15_tgv2f")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/TimerPanel/TimerTexture" unique_id=1652975858]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -30.0
+offset_right = 64.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_87sjf")
+theme_override_font_sizes/font_size = 50
+text = "00:25"
+
+[node name="Timer" type="Timer" parent="CanvasLayer/TimerPanel/TimerTexture/Label" unique_id=1023875439]
+wait_time = 300.0
+one_shot = true
+
+[node name="RetryButton" type="Button" parent="CanvasLayer/TimerPanel" unique_id=1596945264]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -132.0
+offset_top = -47.0
+offset_right = 132.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("11_aw72e")
+flat = true
+
+[node name="Label" type="Label" parent="CanvasLayer/TimerPanel/RetryButton" unique_id=1289277008]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = -35.0
+offset_right = 66.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_87sjf")
+theme_override_font_sizes/font_size = 16
+text = "Time has run out"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Label2" type="Label" parent="CanvasLayer/TimerPanel/RetryButton" unique_id=1081827907]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.0
+offset_top = -21.0
+offset_right = 60.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8117647, 0.48235294, 0.3019608, 1)
+theme_override_fonts/font = ExtResource("12_87sjf")
+theme_override_font_sizes/font_size = 42
+text = "RETRY"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
 
 [node name="Ladder_tscn" parent="." unique_id=841041022 instance=ExtResource("13_efj10")]
 position = Vector2(89, -8)
@@ -427,3 +610,8 @@ position = Vector2(89, -24)
 
 [node name="Ladder_tscn3" parent="." unique_id=1240393583 instance=ExtResource("13_efj10")]
 position = Vector2(89, -40)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1693108249]
+stream = ExtResource("23_aw72e")
+volume_db = -10.0
+autoplay = true

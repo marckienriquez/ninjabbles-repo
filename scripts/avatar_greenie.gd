@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+<<<<<<< HEAD
 var character_frames = {
 	"MIDORI": preload("res://asset/sprites/midori_idle.tres"),
 	"AO": preload("res://asset/sprites/ao_idle.tres"),
@@ -10,6 +11,17 @@ var character_frames = {
 }
 
 
+=======
+@onready var sfx_player: AudioStreamPlayer2D = $SfxPlayer
+
+@export_group("Sound Effects")
+@export var sfx_move: AudioStream
+@export var sfx_jump: AudioStream
+@export var sfx_climb: AudioStream
+@export var sfx_slide: AudioStream
+@export var sfx_punch: AudioStream
+@export var sfx_dead: AudioStream
+>>>>>>> marc-branch
 
 var right: bool = true: 
 	set(value):
@@ -67,7 +79,13 @@ func execute_command(command: String):
 		"Punch":
 			await punch()
 
+func play_sfx(stream: AudioStream):
+	if stream and sfx_player:
+		sfx_player.stream = stream
+		sfx_player.play()
+
 func move_in_direction(dir: Vector2):
+	play_sfx(sfx_move)
 	var tween = create_tween()
 	tween.tween_property(self, "position:x", position.x + dir.x * 35, 0.4)
 	await tween.finished
@@ -76,6 +94,7 @@ func move_in_direction(dir: Vector2):
 var jump_count: int = 0 
 
 func jump():
+	play_sfx(sfx_jump)
 	jump_count += 1
 	var current_jump_id = jump_count
 	is_jumping = true
@@ -111,6 +130,7 @@ func climb():
 		return
 	
 	is_climbing = true
+	play_sfx(sfx_climb)
 	
 	# We use a while loop to keep climbing as long as we are on a ladder
 	while current_ladder != null:
@@ -162,6 +182,7 @@ func _physics_process(delta: float) -> void:
 	
 	# Check if we fell off the map
 	if global_position.y > FALL_THRESHOLD:
+		play_sfx(sfx_dead)
 		reset_to_last_safe_spot()
 		
 	# MODIFIED: Only handle movement if NOT in a controlled jump
@@ -175,6 +196,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func slide():
+	play_sfx(sfx_slide)
 	var forward = Vector2.RIGHT if right else Vector2.LEFT
 	var slide_distance = 100 # Adjust based on your tile size
 	var target_pos = position + (forward * slide_distance)
@@ -197,6 +219,7 @@ func slide():
 	position.y -= original_size.y / 4
 
 func punch():
+	play_sfx(sfx_punch)
 	var forward = Vector2.RIGHT if right else Vector2.LEFT
 	
 	# 1. Visual Lunge
