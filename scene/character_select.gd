@@ -9,6 +9,11 @@ extends Node2D
 @onready var prev_char: TextureButton = $Control/prev_char
 @onready var next_char: TextureButton = $Control/next_char
 
+@onready var move_right: TextureButton = $Control/move_right
+@onready var move_left: TextureButton = $Control/move_left
+@onready var back_button: TextureButton = $Control/Back
+@onready var play_button: TextureButton = $Control/Play
+
 var current_index := 0
 
 var characters = [
@@ -51,6 +56,14 @@ var characters = [
 ]
 
 func _ready():
+	move_right.pressed.connect(_on_move_right_pressed)
+	move_left.pressed.connect(_on_move_left_pressed)
+	next_char.pressed.connect(_on_next_char_pressed)
+	prev_char.pressed.connect(_on_prev_char_pressed)
+	current_char.pressed.connect(_on_current_char_pressed)
+	back_button.pressed.connect(_on_back_pressed)
+	play_button.pressed.connect(_on_play_pressed)
+
 	update_character()
 
 func update_character():
@@ -61,7 +74,11 @@ func update_character():
 
 	char_name.text = selected["name"]
 	char_desc.text = selected["desc"]
-	in_use.text = "IN USE: " + selected["name"]
+
+	if GlobalData.selected_character == selected["name"]:
+		in_use.text = "SELECTED"
+	else:
+		in_use.text = ""
 
 	big_sprite.sprite_frames = selected["frames"]
 	big_sprite.play("idle")
@@ -94,13 +111,9 @@ func _on_current_char_pressed():
 	pass
 
 func _on_back_pressed():
-	get_tree().change_scene_to_file("res://main.tscn")
+	get_tree().change_scene_to_file("res://scene/main_scrn/main_screen.tscn")
 
 func _on_play_pressed():
 	GlobalData.selected_character = characters[current_index]["name"]
-	get_tree().change_scene_to_file("res://main.tscn")
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	update_character()
+	get_tree().change_scene_to_file("res://scene/main_scrn/main_screen.tscn")

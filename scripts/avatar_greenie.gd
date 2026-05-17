@@ -1,5 +1,16 @@
 extends CharacterBody2D
 
+var character_frames = {
+	"MIDORI": preload("res://asset/sprites/midori_idle.tres"),
+	"AO": preload("res://asset/sprites/ao_idle.tres"),
+	"HANA": preload("res://asset/sprites/hana_idle.tres"),
+	"MURASAKI": preload("res://asset/sprites/murasaki_idle.tres"),
+	"FURUI": preload("res://asset/sprites/furui_idle.tres"),
+	"WAKAI": preload("res://asset/sprites/wakai_idle.tres")
+}
+
+
+
 var right: bool = true: 
 	set(value):
 		right = value
@@ -19,7 +30,20 @@ const JUMP_VELOCITY = -300.0
 func _ready():
 	add_to_group("character")
 	last_safe_position = global_position
+	apply_selected_character()
 
+func apply_selected_character():
+	var selected_name = GlobalData.selected_character
+
+	if character_frames.has(selected_name):
+		$AnimatedSprite2D.sprite_frames = character_frames[selected_name]
+		$AnimatedSprite2D.play("idle")
+	else:
+		$AnimatedSprite2D.sprite_frames = character_frames["MIDORI"]
+		$AnimatedSprite2D.play("idle")
+		
+	$AnimatedSprite2D.scale = Vector2(0.16, 0.16)
+		
 func run_commands(commands: Array[String]):
 	for command in commands:
 		await execute_command(command)
