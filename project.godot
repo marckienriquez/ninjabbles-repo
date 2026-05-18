@@ -11,14 +11,13 @@ config_version=5
 [application]
 
 config/name="Ninjabbles"
-run/main_scene="uid://dt0s43c84ploo"
+run/main_scene="uid://cg7p2a7vxncbp"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://dablgfsrdvg6f"
 
 [autoload]
 
 GlobalData="*uid://cti4k54b7icb1"
-AudioStreamBgMusic="*uid://cmt1hgdegb26t"
 
 [display]
 

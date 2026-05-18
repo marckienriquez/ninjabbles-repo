@@ -13,8 +13,11 @@ texture = ExtResource("1_x3yuv")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rldx7"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wsws5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wrvt0"]
+
 [node name="BlockEditor" type="Panel" unique_id=912800315]
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -35,12 +38,14 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -88.0
+offset_left = -63.0
 offset_top = -28.3125
-offset_right = 43.0
-offset_bottom = 102.6875
+offset_right = 32.0
+offset_bottom = 66.6875
 grow_horizontal = 0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_rldx7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_wsws5")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_wrvt0")
 icon = ExtResource("3_wrvt0")
 expand_icon = true
 
@@ -80,7 +85,7 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("5_uq1mn")
 
-[node name="RunButton" type="Button" parent="." unique_id=1254735476]
+[node name="RunButton" type="Button" parent="." unique_id=1597778863]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -96,7 +101,7 @@ grow_vertical = 0
 icon = ExtResource("6_wrvt0")
 flat = true
 
-[node name="Label" type="Label" parent="RunButton" unique_id=606254386]
+[node name="Label" type="Label" parent="RunButton" unique_id=1650909785]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -113,6 +118,44 @@ theme_override_colors/font_color = Color(0.8117647, 0.48235294, 0.3019608, 1)
 theme_override_fonts/font = ExtResource("7_wsws5")
 theme_override_font_sizes/font_size = 42
 text = "Run"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="ClearButton" type="Button" parent="." unique_id=1254735476]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.83300006
+anchor_top = 0.90400004
+anchor_right = 0.83300006
+anchor_bottom = 0.90400004
+offset_left = -92.36603
+offset_top = -33.63553
+offset_right = 91.63397
+offset_bottom = 33.36447
+grow_horizontal = 2
+grow_vertical = 0
+icon = ExtResource("6_wrvt0")
+flat = true
+expand_icon = true
+
+[node name="Label" type="Label" parent="ClearButton" unique_id=606254386]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.999985
+offset_top = -28.5
+offset_right = 63.000015
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8117647, 0.48235294, 0.3019608, 1)
+theme_override_fonts/font = ExtResource("7_wsws5")
+theme_override_font_sizes/font_size = 35
+text = "clear"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
