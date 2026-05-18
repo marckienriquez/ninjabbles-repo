@@ -51,16 +51,18 @@ stretch_mode = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="summary_screen" unique_id=1618484313]
 layout_mode = 0
-offset_left = 187.0
+offset_left = 213.5
 offset_top = 117.0
-offset_right = 970.0
+offset_right = 957.5
 offset_bottom = 582.0
 
 [node name="Label" type="Label" parent="summary_screen/VBoxContainer" unique_id=1545614964]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("3_r0d1k")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 60
 text = "Good Job, Ninja!"
 horizontal_alignment = 1
 uppercase = true
@@ -69,6 +71,7 @@ uppercase = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_r0d1k")
+theme_override_font_sizes/font_size = 27
 text = "These are the blocks you have assembled..."
 horizontal_alignment = 1
 uppercase = true
@@ -78,7 +81,7 @@ custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_r0d1k")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 30
 horizontal_alignment = 1
 uppercase = true
 

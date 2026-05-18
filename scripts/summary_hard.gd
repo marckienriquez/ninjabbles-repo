@@ -45,4 +45,4 @@ func convert_to_technical(cmd_name: String) -> String:
 		_: return cmd_name.to_lower().replace(" ", "_")
 
 func _on_close_summary_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scene/hard_screen.tscn")
+	get_tree().change_scene_to_file("res://scene/main_scrn/main_screen.tscn")

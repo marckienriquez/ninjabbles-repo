@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cago2eb50hun1"]
 
-[ext_resource type="Script" uid="uid://bqdgymp3cx6h" path="res://scene/character_select.gd" id="1_0q86x"]
+[ext_resource type="Script" path="res://scene/character_select.gd" id="1_0q86x"]
 [ext_resource type="Texture2D" uid="uid://b5l8jc80723fb" path="res://asset/others/360_F_986546394_d3jsxWIbjIcANAs4evAM6x9QsC5n2EVS.jpg" id="2_oo4xk"]
 [ext_resource type="Texture2D" uid="uid://qh1x2bu22ejj" path="res://asset/others/selection_bar.png" id="3_5m43v"]
 [ext_resource type="Texture2D" uid="uid://dvpihxrg00mpi" path="res://asset/others/back.png" id="4_lkekb"]
@@ -12,8 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://crxb28p121c8t" path="res://asset/others/midori.png" id="10_mtqm2"]
 [ext_resource type="Texture2D" uid="uid://bgbh10nb5cbsr" path="res://asset/others/wakai.png" id="11_837ch"]
 [ext_resource type="Texture2D" uid="uid://daujwkn4dq7t1" path="res://asset/others/ao.png" id="12_pr6dy"]
+[ext_resource type="AudioStream" uid="uid://mhf1a0ld8m5f" path="res://music/aud_selection.mp3" id="13_oo4xk"]
 
-[node name="Control" type="Control" unique_id=118433756]
+[node name="Selection Screen" type="Control" unique_id=118433756]
 clip_contents = true
 layout_mode = 3
 anchors_preset = 15
@@ -130,14 +131,14 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 81.0
-offset_top = -131.0
-offset_right = 412.0
-offset_bottom = 114.0
+offset_left = 75.0
+offset_top = -136.0
+offset_right = 422.0
+offset_bottom = 113.0
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.95, 0.95, 0.95, 1)
-theme_override_constants/outline_size = 2
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("9_xc1ki")
 theme_override_font_sizes/font_size = 22
 text = "CHAR NAME HERE"
@@ -208,3 +209,8 @@ theme_override_fonts/font = ExtResource("9_xc1ki")
 theme_override_font_sizes/font_size = 20
 text = "SELECTED"
 horizontal_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1108544084]
+stream = ExtResource("13_oo4xk")
+volume_db = -10.0
+autoplay = true
