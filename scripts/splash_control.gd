@@ -54,5 +54,8 @@ func animate_text():
 		var dots = ".".repeat(dot_count)
 		label.text = "DOWNLOADING CONTENT" + dots
 
+	
 func _on_loading_finished():
-	get_tree().change_scene_to_file("res://scene/main_scrn/main_screen.tscn")
+	print("Loading finished!")
+	var err = get_tree().change_scene_to_file("res://scene/main_scrn/main_screen.tscn")
+	print("Change scene result: ", err)

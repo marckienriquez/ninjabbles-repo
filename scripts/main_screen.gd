@@ -1,15 +1,9 @@
 extends Control
-
-@onready var btn_easy = $TextureButton
-@onready var btn_character = $TextureButton2
+const instruction_scene = preload("res://scene/instruction_screen.tscn")
 
 func _ready() -> void:
-	btn_easy.pressed.connect(_on_easy_pressed)
-	btn_character.pressed.connect(_on_character_pressed)
+	pass
 
-<<<<<<< HEAD
-func _on_easy_pressed() -> void:
-=======
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -17,8 +11,11 @@ func _process(delta: float) -> void:
 
 func _on_texture_button_pressed() -> void:
 	$AudioStreamPlayer.stop()
->>>>>>> marc-branch
-	get_tree().change_scene_to_file("res://scene/easy_screen.tscn")
-
-func _on_character_pressed() -> void:
 	get_tree().change_scene_to_file("res://scene/character_select.tscn")
+
+
+func _on_instr_btn_pressed() -> void:
+	var instruction_resource = preload("res://scene/instruction_screen.tscn")
+	var instructions = instruction_resource.instantiate()
+	# 1. Add it to the scene tree first
+	add_child(instructions)

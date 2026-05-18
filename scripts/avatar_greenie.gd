@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-<<<<<<< HEAD
 var character_frames = {
 	"MIDORI": preload("res://asset/sprites/midori_idle.tres"),
 	"AO": preload("res://asset/sprites/ao_idle.tres"),
@@ -10,8 +9,6 @@ var character_frames = {
 	"WAKAI": preload("res://asset/sprites/wakai_idle.tres")
 }
 
-
-=======
 @onready var sfx_player: AudioStreamPlayer2D = $SfxPlayer
 
 @export_group("Sound Effects")
@@ -21,7 +18,6 @@ var character_frames = {
 @export var sfx_slide: AudioStream
 @export var sfx_punch: AudioStream
 @export var sfx_dead: AudioStream
->>>>>>> marc-branch
 
 var right: bool = true: 
 	set(value):
@@ -43,6 +39,7 @@ func _ready():
 	add_to_group("character")
 	last_safe_position = global_position
 	apply_selected_character()
+	
 
 func apply_selected_character():
 	var selected_name = GlobalData.selected_character
@@ -125,6 +122,8 @@ func jump():
 
 signal character_clicked
 
+
+
 func climb():
 	if current_ladder == null:
 		return
@@ -163,7 +162,8 @@ func is_on_new_ladder_segment() -> bool:
 func _input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT:
-			emit_signal("character_clicked")
+			print("avatar clicked")
+			character_clicked.emit()
 
 # Update your _physics_process to respect the jump
 func _physics_process(delta: float) -> void:

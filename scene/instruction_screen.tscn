@@ -1,0 +1,234 @@
+[gd_scene format=3 uid="uid://c81sw7vgiugbp"]
+
+[ext_resource type="Texture2D" uid="uid://drj8srr5bq7af" path="res://asset/others/scroll-big.png" id="1_dcchn"]
+[ext_resource type="Script" uid="uid://0f847n4gb7al" path="res://scripts/instruction_screen.gd" id="1_rd28n"]
+[ext_resource type="Texture2D" uid="uid://b4pah4pn21m5e" path="res://asset/others/Group 11.png" id="2_6ig1w"]
+[ext_resource type="Texture2D" uid="uid://cr0jb67no34fd" path="res://asset/others/arrow.png" id="2_drjvt"]
+[ext_resource type="Texture2D" uid="uid://cw7jqa5fid72l" path="res://asset/others/shuriken.png" id="3_77s36"]
+[ext_resource type="FontFile" uid="uid://3qsftis2m7nf" path="res://asset/PixelifySans-VariableFont_wght.ttf" id="3_vsjng"]
+[ext_resource type="Texture2D" uid="uid://btfdqj8fdlqvh" path="res://asset/others/char.png" id="4_vsjng"]
+[ext_resource type="Texture2D" uid="uid://dux06g1rovm8p" path="res://asset/others/code_scroll.png" id="5_k8yll"]
+[ext_resource type="Texture2D" uid="uid://bdkngp3ixb4x8" path="res://asset/others/instr.png" id="7_ye5s0"]
+[ext_resource type="Texture2D" uid="uid://cqswdonv4u6cb" path="res://asset/others/timer.png" id="8_lfcip"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1dxxc"]
+
+[node name="Instruction Screen" type="Control" unique_id=1185626723]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_rd28n")
+
+[node name="scroll" type="TextureRect" parent="." unique_id=1015370918]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 48.0
+offset_right = 1043.0
+offset_bottom = 590.0
+texture = ExtResource("1_dcchn")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="next_btn" type="TextureButton" parent="scroll" unique_id=590160841]
+layout_mode = 0
+offset_left = 898.0
+offset_top = 218.0
+offset_right = 1019.0
+offset_bottom = 306.0
+texture_normal = ExtResource("2_drjvt")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="prev_btn" type="TextureButton" parent="scroll" unique_id=1871605909]
+layout_mode = 0
+offset_left = -80.0
+offset_top = 218.0
+offset_right = 41.0
+offset_bottom = 306.0
+texture_normal = ExtResource("2_drjvt")
+ignore_texture_size = true
+stretch_mode = 5
+flip_h = true
+
+[node name="TabContainer" type="TabContainer" parent="scroll" unique_id=110360681]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 40.0
+current_tab = 3
+tabs_visible = false
+
+[node name="Slide 1" type="Control" parent="scroll/TabContainer" unique_id=1753549103]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="TextureRect" type="TextureRect" parent="scroll/TabContainer/Slide 1" unique_id=406079496]
+layout_mode = 0
+offset_left = 236.0
+offset_top = 265.0
+offset_right = 713.0
+offset_bottom = 382.0
+texture = ExtResource("2_6ig1w")
+
+[node name="Label" type="Label" parent="scroll/TabContainer/Slide 1" unique_id=337694540]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 169.0
+offset_top = 109.0
+offset_right = 768.0
+offset_bottom = 230.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_vsjng")
+theme_override_font_sizes/font_size = 34
+text = "Select the ninja you would like to play as and begin your journey."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Slide 2" type="Control" parent="scroll/TabContainer" unique_id=186727207]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="TextureRect" type="TextureRect" parent="scroll/TabContainer/Slide 2" unique_id=2062003009]
+layout_mode = 0
+offset_left = 406.0
+offset_top = 286.0
+offset_right = 578.0
+offset_bottom = 452.0
+texture = ExtResource("4_vsjng")
+
+[node name="Label" type="Label" parent="scroll/TabContainer/Slide 2" unique_id=1272692593]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 170.0
+offset_top = 77.0
+offset_right = 769.0
+offset_bottom = 254.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_vsjng")
+theme_override_font_sizes/font_size = 34
+text = "After you have selected your ninja, the game will start by clicking the ninja itself and your adventure will officially begin."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Slide 3" type="Control" parent="scroll/TabContainer" unique_id=1715802163]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="TextureRect" type="TextureRect" parent="scroll/TabContainer/Slide 3" unique_id=1498079887]
+layout_mode = 0
+offset_left = 323.0
+offset_top = 228.0
+offset_right = 807.0
+offset_bottom = 473.0
+texture = ExtResource("5_k8yll")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="scroll/TabContainer/Slide 3" unique_id=2114779859]
+layout_mode = 0
+offset_left = 153.0
+offset_top = 267.0
+offset_right = 325.0
+offset_bottom = 433.0
+texture = ExtResource("4_vsjng")
+
+[node name="Label" type="Label" parent="scroll/TabContainer/Slide 3" unique_id=312542981]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 123.0
+offset_top = 39.0
+offset_right = 806.0
+offset_bottom = 221.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_vsjng")
+theme_override_font_sizes/font_size = 24
+text = "To start the level, click your ninja. The code scroll will open, allowing you to combine your ninja’s movements. The left shows available functions, while the right is where you arrange them. Press Run to execute your sequence."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Slide 4" type="Control" parent="scroll/TabContainer" unique_id=1776817933]
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="TextureRect" type="TextureRect" parent="scroll/TabContainer/Slide 4" unique_id=240556852]
+layout_mode = 0
+offset_left = 148.0
+offset_top = 272.0
+offset_right = 588.0
+offset_bottom = 416.0
+texture = ExtResource("7_ye5s0")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="scroll/TabContainer/Slide 4" unique_id=2084488323]
+layout_mode = 0
+offset_left = 610.0
+offset_top = 306.0
+offset_right = 802.0
+offset_bottom = 384.0
+texture = ExtResource("8_lfcip")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="scroll/TabContainer/Slide 4" unique_id=438626183]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 122.0
+offset_top = 56.0
+offset_right = 805.0
+offset_bottom = 238.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_vsjng")
+theme_override_font_sizes/font_size = 24
+text = "The countdown begins once the player closes the instructions for each level. The objective is to complete each level in the shortest time possible while collecting the necessary items the ninja needs."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="close_btn" type="Button" parent="scroll" unique_id=234477449]
+z_index = 1
+layout_mode = 0
+offset_left = 848.0
+offset_top = -30.0
+offset_right = 943.0
+offset_bottom = 65.83333
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1dxxc")
+icon = ExtResource("3_77s36")
+expand_icon = true
+
+[connection signal="pressed" from="scroll/next_btn" to="." method="_on_next_btn_pressed"]
+[connection signal="pressed" from="scroll/prev_btn" to="." method="_on_prev_btn_pressed"]
+[connection signal="pressed" from="scroll/close_btn" to="." method="_on_close_btn_pressed"]

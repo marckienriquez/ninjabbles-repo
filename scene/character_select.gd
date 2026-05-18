@@ -116,4 +116,4 @@ func _on_back_pressed():
 func _on_play_pressed():
 	GlobalData.selected_character = characters[current_index]["name"]
 	update_character()
-	get_tree().change_scene_to_file("res://scene/main_scrn/main_screen.tscn")
+	get_tree().change_scene_to_file("res://scene/easy_screen.tscn")
