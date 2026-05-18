@@ -31,6 +31,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_oo4xk")
+expand_mode = 1
 
 [node name="Selection_bar" type="TextureRect" parent="." unique_id=324703992]
 layout_mode = 1
@@ -44,6 +45,7 @@ grow_vertical = 2
 texture = ExtResource("3_5m43v")
 
 [node name="Back" type="TextureButton" parent="." unique_id=1981358304]
+clip_contents = true
 layout_mode = 0
 offset_left = 6.0
 offset_top = 32.999996
@@ -53,6 +55,7 @@ scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("4_lkekb")
 
 [node name="Play" type="TextureButton" parent="." unique_id=160264536]
+clip_contents = true
 layout_mode = 0
 offset_left = 965.0
 offset_top = 370.0
@@ -67,6 +70,7 @@ scale = Vector2(1.2424998, 1.2424998)
 sprite_frames = ExtResource("6_d4oux")
 
 [node name="move_right" type="TextureButton" parent="." unique_id=494554928]
+clip_contents = true
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -83,6 +87,7 @@ scale = Vector2(0.1, 0.1)
 texture_normal = ExtResource("7_f43ms")
 
 [node name="move_left" type="TextureButton" parent="." unique_id=32483952]
+clip_contents = true
 layout_mode = 1
 offset_left = 200.0
 offset_top = 535.0
@@ -94,9 +99,9 @@ flip_h = true
 
 [node name="desc_bg" type="TextureRect" parent="." unique_id=303915952]
 layout_mode = 0
-offset_left = 18.000002
+offset_left = 35.0
 offset_top = 145.0
-offset_right = 620.8571
+offset_right = 637.8571
 offset_bottom = 602.1428
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("8_sq00v")
@@ -125,9 +130,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 64.0
+offset_left = 81.0
 offset_top = -131.0
-offset_right = 395.0
+offset_right = 412.0
 offset_bottom = 114.0
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
