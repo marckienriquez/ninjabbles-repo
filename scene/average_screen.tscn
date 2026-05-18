@@ -190,16 +190,24 @@ texture = ExtResource("2_ucndy")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_0hyr4")
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dacax"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0hyr4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gvqtw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bsyrg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jjpml"]
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gm46g"]
 texture = ExtResource("7_rioux")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rldx7"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dacax"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cm5sm"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0hyr4"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jjpml"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3il77"]
 
 [node name="Average Screen" type="Node2D" unique_id=1497751499]
 script = ExtResource("1_ucndy")
@@ -257,6 +265,184 @@ position_smoothing_enabled = true
 
 [node name="Summary" parent="CanvasLayer" unique_id=697079022 instance=ExtResource("6_0hyr4")]
 
+[node name="Instructions" type="Panel" parent="CanvasLayer" unique_id=54855445]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_dacax")
+
+[node name="InstructionsTexture" type="TextureRect" parent="CanvasLayer/Instructions" unique_id=649932777]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -266.0
+offset_top = 29.0
+offset_right = 263.75
+offset_bottom = 253.0
+grow_horizontal = 2
+texture = ExtResource("12_0hyr4")
+
+[node name="CloseInstructionsButton" type="Button" parent="CanvasLayer/Instructions/InstructionsTexture" unique_id=1703131252]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.98
+anchor_top = 0.101
+anchor_right = 0.98
+anchor_bottom = 0.101
+offset_left = -29.15503
+offset_top = -29.533998
+offset_right = 28.84497
+offset_bottom = 29.466
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0hyr4")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_gvqtw")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_bsyrg")
+icon = ExtResource("9_v58g8")
+expand_icon = true
+
+[node name="Label" type="Label" parent="CanvasLayer/Instructions/InstructionsTexture" unique_id=257695228]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.875
+offset_top = -91.0
+offset_right = 197.125
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = -2
+theme_override_constants/paragraph_spacing = 0
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("13_jnqrk")
+theme_override_font_sizes/font_size = 20
+text = "Beyond the shifting sands lies the hidden Aetherion Water. One drop restores both thirst and spirit, yet it reveals itself only to the patient. Our village fades beneath the sun. Bring back the sacred water… and return."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TimerPanel" type="Panel" parent="CanvasLayer" unique_id=1334587516]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 323.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_jjpml")
+script = ExtResource("14_4hgsv")
+
+[node name="TimerTexture" type="TextureRect" parent="CanvasLayer/TimerPanel" unique_id=1826997780]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -159.0
+offset_bottom = 71.0
+grow_horizontal = 0
+texture = ExtResource("15_ww6gl")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/TimerPanel/TimerTexture" unique_id=1652975858]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -30.0
+offset_right = 64.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("13_jnqrk")
+theme_override_font_sizes/font_size = 50
+text = "00:25"
+
+[node name="Timer" type="Timer" parent="CanvasLayer/TimerPanel/TimerTexture/Label" unique_id=1023875439]
+wait_time = 240.0
+one_shot = true
+
+[node name="RetryButton" type="Button" parent="CanvasLayer/TimerPanel" unique_id=1596945264]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -132.0
+offset_top = -47.0
+offset_right = 132.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("12_0hyr4")
+flat = true
+
+[node name="Label" type="Label" parent="CanvasLayer/TimerPanel/RetryButton" unique_id=1289277008]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = -35.0
+offset_right = 66.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("13_jnqrk")
+theme_override_font_sizes/font_size = 16
+text = "Time has run out"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Label2" type="Label" parent="CanvasLayer/TimerPanel/RetryButton" unique_id=1081827907]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.0
+offset_top = -21.0
+offset_right = 60.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8117647, 0.48235294, 0.3019608, 1)
+theme_override_fonts/font = ExtResource("13_jnqrk")
+theme_override_font_sizes/font_size = 42
+text = "RETRY"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
 [node name="BlockEditor" type="Panel" parent="CanvasLayer" unique_id=912800315]
 visible = false
 anchors_preset = 8
@@ -279,12 +465,14 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -88.0
-offset_top = -28.3125
-offset_right = 43.0
-offset_bottom = 102.6875
+offset_left = -61.0
+offset_top = -27.3125
+offset_right = 34.0
+offset_bottom = 67.6875
 grow_horizontal = 0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_rldx7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_cm5sm")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_3il77")
 icon = ExtResource("9_v58g8")
 expand_icon = true
 
@@ -403,186 +591,8 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="Instructions" type="Panel" parent="CanvasLayer" unique_id=54855445]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -576.0
-offset_top = -324.0
-offset_right = 576.0
-offset_bottom = 324.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_dacax")
-
-[node name="InstructionsTexture" type="TextureRect" parent="CanvasLayer/Instructions" unique_id=649932777]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -266.0
-offset_top = 29.0
-offset_right = 263.75
-offset_bottom = 253.0
-grow_horizontal = 2
-texture = ExtResource("12_0hyr4")
-
-[node name="CloseInstructionsButton" type="Button" parent="CanvasLayer/Instructions/InstructionsTexture" unique_id=1703131252]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.98
-anchor_top = 0.101
-anchor_right = 0.98
-anchor_bottom = 0.101
-offset_left = -29.15503
-offset_top = -29.533998
-offset_right = 28.84497
-offset_bottom = 29.466
-grow_horizontal = 0
-theme_override_styles/normal = SubResource("StyleBoxEmpty_0hyr4")
-icon = ExtResource("9_v58g8")
-expand_icon = true
-
-[node name="Label" type="Label" parent="CanvasLayer/Instructions/InstructionsTexture" unique_id=257695228]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -193.875
-offset_top = -91.0
-offset_right = 197.125
-offset_bottom = 72.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/line_spacing = -2
-theme_override_constants/paragraph_spacing = 0
-theme_override_constants/outline_size = 5
-theme_override_fonts/font = ExtResource("13_jnqrk")
-theme_override_font_sizes/font_size = 20
-text = "Beyond the shifting sands lies the hidden Aetherion Water. One drop restores both thirst and spirit, yet it reveals itself only to the patient. Our village fades beneath the sun. Bring back the sacred water… and return."
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-
-[node name="TimerPanel" type="Panel" parent="CanvasLayer" unique_id=1334587516]
-visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -576.0
-offset_top = -324.0
-offset_right = 576.0
-offset_bottom = 323.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_jjpml")
-script = ExtResource("14_4hgsv")
-
-[node name="TimerTexture" type="TextureRect" parent="CanvasLayer/TimerPanel" unique_id=1826997780]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -166.0
-offset_top = 9.0
-offset_right = -7.0
-offset_bottom = 80.0
-grow_horizontal = 0
-texture = ExtResource("15_ww6gl")
-expand_mode = 1
-
-[node name="Label" type="Label" parent="CanvasLayer/TimerPanel/TimerTexture" unique_id=1652975858]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -64.0
-offset_top = -30.0
-offset_right = 64.0
-offset_bottom = 30.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("13_jnqrk")
-theme_override_font_sizes/font_size = 50
-text = "00:25"
-
-[node name="Timer" type="Timer" parent="CanvasLayer/TimerPanel/TimerTexture/Label" unique_id=1023875439]
-wait_time = 240.0
-one_shot = true
-
-[node name="RetryButton" type="Button" parent="CanvasLayer/TimerPanel" unique_id=1596945264]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -132.0
-offset_top = -47.0
-offset_right = 132.0
-offset_bottom = 47.0
-grow_horizontal = 2
-grow_vertical = 2
-icon = ExtResource("12_0hyr4")
-flat = true
-
-[node name="Label" type="Label" parent="CanvasLayer/TimerPanel/RetryButton" unique_id=1289277008]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -65.0
-offset_top = -35.0
-offset_right = 66.0
-offset_bottom = -12.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("13_jnqrk")
-theme_override_font_sizes/font_size = 16
-text = "Time has run out"
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
-
-[node name="Label2" type="Label" parent="CanvasLayer/TimerPanel/RetryButton" unique_id=1081827907]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -61.0
-offset_top = -21.0
-offset_right = 60.0
-offset_bottom = 30.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.8117647, 0.48235294, 0.3019608, 1)
-theme_override_fonts/font = ExtResource("13_jnqrk")
-theme_override_font_sizes/font_size = 42
-text = "RETRY"
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
-
 [node name="Ladder_tscn" parent="." unique_id=1311348962 instance=ExtResource("11_1ivf0")]
-position = Vector2(120, -9)
+position = Vector2(120, -8)
 
 [node name="Ladder_tscn2" parent="." unique_id=841041022 instance=ExtResource("11_1ivf0")]
 position = Vector2(120, -24)
@@ -591,25 +601,25 @@ position = Vector2(120, -24)
 position = Vector2(120, -40)
 
 [node name="Ladder_tscn4" parent="." unique_id=821811400 instance=ExtResource("11_1ivf0")]
-position = Vector2(120, -55)
+position = Vector2(120, -56)
 
 [node name="Ladder_tscn5" parent="." unique_id=1112184573 instance=ExtResource("11_1ivf0")]
 position = Vector2(120, -72)
 
 [node name="Ladder_tscn6" parent="." unique_id=986322051 instance=ExtResource("11_1ivf0")]
-position = Vector2(216, -87)
+position = Vector2(216, -88)
 
 [node name="Ladder_tscn7" parent="." unique_id=1359339695 instance=ExtResource("11_1ivf0")]
-position = Vector2(216, -103)
+position = Vector2(216, -104)
 
 [node name="Ladder_tscn8" parent="." unique_id=362850465 instance=ExtResource("11_1ivf0")]
-position = Vector2(216, -119)
+position = Vector2(216, -120)
 
 [node name="Ladder_tscn9" parent="." unique_id=2000445650 instance=ExtResource("11_1ivf0")]
-position = Vector2(216, -135)
+position = Vector2(216, -136)
 
 [node name="Ladder_tscn10" parent="." unique_id=418097951 instance=ExtResource("11_1ivf0")]
-position = Vector2(216, -151)
+position = Vector2(216, -152)
 
 [node name="Ladder_tscn11" parent="." unique_id=238502871 instance=ExtResource("11_1ivf0")]
 position = Vector2(536, -88)
@@ -621,22 +631,22 @@ position = Vector2(536, -104)
 position = Vector2(536, -120)
 
 [node name="Ladder_tscn14" parent="." unique_id=114954081 instance=ExtResource("11_1ivf0")]
-position = Vector2(584, -135)
+position = Vector2(584, -136)
 
 [node name="Ladder_tscn15" parent="." unique_id=1643415851 instance=ExtResource("11_1ivf0")]
-position = Vector2(584, -151)
+position = Vector2(584, -152)
 
 [node name="Ladder_tscn16" parent="." unique_id=897915728 instance=ExtResource("11_1ivf0")]
-position = Vector2(584, -167)
+position = Vector2(584, -168)
 
 [node name="Ladder_tscn17" parent="." unique_id=1616637060 instance=ExtResource("11_1ivf0")]
-position = Vector2(520, -183)
+position = Vector2(520, -184)
 
 [node name="Ladder_tscn18" parent="." unique_id=1660483398 instance=ExtResource("11_1ivf0")]
-position = Vector2(520, -199)
+position = Vector2(520, -200)
 
 [node name="Ladder_tscn19" parent="." unique_id=1975659182 instance=ExtResource("11_1ivf0")]
-position = Vector2(520, -215)
+position = Vector2(520, -216)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1140065176]
 stream = ExtResource("23_3il77")

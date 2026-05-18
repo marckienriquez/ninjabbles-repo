@@ -146,7 +146,7 @@ func climb():
 		var ladder_top_y = current_ladder.global_position.y - current_ladder.ladder_height / 2.0
 		var character_half_height = $CollisionShape2D.shape.size.y / 2.0
 
-		while global_position.y - character_half_height > ladder_top_y:
+		while global_position.y - (character_half_height + 4) > ladder_top_y:
 			global_position.y -= 2
 			await get_tree().process_frame
 

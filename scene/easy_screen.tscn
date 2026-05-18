@@ -190,6 +190,10 @@ sources/0 = SubResource("TileSetAtlasSource_gm46g")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rldx7"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c48df"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_opevt"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jjpml"]
 
 [node name="Easy Screen" type="Node2D" unique_id=1239839669]
@@ -246,9 +250,6 @@ position_smoothing_enabled = true
 
 [node name="Summary" parent="CanvasLayer" unique_id=697079022 instance=ExtResource("6_gm46g")]
 
-[node name="BlockEditor" parent="CanvasLayer" unique_id=912800315 instance=ExtResource("10_gm46g")]
-visible = false
-
 [node name="Instructions" type="Panel" parent="CanvasLayer" unique_id=54855445]
 anchors_preset = 8
 anchor_left = 0.5
@@ -288,6 +289,8 @@ offset_right = 28.84497
 offset_bottom = 29.466
 grow_horizontal = 0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_rldx7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_c48df")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_opevt")
 icon = ExtResource("8_dacax")
 expand_icon = true
 
@@ -337,10 +340,8 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -166.0
-offset_top = 9.0
-offset_right = -7.0
-offset_bottom = 80.0
+offset_left = -159.0
+offset_bottom = 71.0
 grow_horizontal = 0
 texture = ExtResource("11_ivbv5")
 expand_mode = 1
@@ -425,6 +426,9 @@ text = "RETRY"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
+
+[node name="BlockEditor" parent="CanvasLayer" unique_id=912800315 instance=ExtResource("10_gm46g")]
+visible = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1209496841]
 stream = ExtResource("19_c48df")

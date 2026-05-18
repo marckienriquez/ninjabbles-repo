@@ -9,6 +9,10 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jjpml"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vkxih"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jtl0g"]
+
 [node name="Summary" type="Panel" unique_id=697079022]
 anchors_preset = 8
 anchor_left = 0.5
@@ -93,6 +97,8 @@ offset_top = 19.5
 offset_right = 1056.5
 offset_bottom = 115.33333
 theme_override_styles/normal = SubResource("StyleBoxEmpty_jjpml")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vkxih")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jtl0g")
 icon = ExtResource("4_38uvh")
 expand_icon = true
 
