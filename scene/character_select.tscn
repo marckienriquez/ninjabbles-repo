@@ -13,21 +13,17 @@
 [ext_resource type="Texture2D" uid="uid://bgbh10nb5cbsr" path="res://asset/others/wakai.png" id="11_837ch"]
 [ext_resource type="Texture2D" uid="uid://daujwkn4dq7t1" path="res://asset/others/ao.png" id="12_pr6dy"]
 
-[node name="CharacterSelect" type="Node2D" unique_id=63979989]
-script = ExtResource("1_0q86x")
-
-[node name="Control" type="Control" parent="." unique_id=118433756]
+[node name="Control" type="Control" unique_id=118433756]
 clip_contents = true
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1152.0
-offset_bottom = 648.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_0q86x")
 
-[node name="Background" type="TextureRect" parent="Control" unique_id=2003917849]
+[node name="Background" type="TextureRect" parent="." unique_id=2003917849]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -36,7 +32,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_oo4xk")
 
-[node name="Selection_bar" type="TextureRect" parent="Control" unique_id=324703992]
+[node name="Selection_bar" type="TextureRect" parent="." unique_id=324703992]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -47,7 +43,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_5m43v")
 
-[node name="Back" type="TextureButton" parent="Control" unique_id=1981358304]
+[node name="Back" type="TextureButton" parent="." unique_id=1981358304]
 layout_mode = 0
 offset_left = 6.0
 offset_top = 32.999996
@@ -56,7 +52,7 @@ offset_bottom = 389.0
 scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("4_lkekb")
 
-[node name="Play" type="TextureButton" parent="Control" unique_id=160264536]
+[node name="Play" type="TextureButton" parent="." unique_id=160264536]
 layout_mode = 0
 offset_left = 965.0
 offset_top = 370.0
@@ -65,12 +61,12 @@ offset_bottom = 865.0
 scale = Vector2(0.25, 0.25)
 texture_normal = ExtResource("5_i3lkr")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control" unique_id=1316913517]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1316913517]
 position = Vector2(683, 298.00003)
 scale = Vector2(1.2424998, 1.2424998)
 sprite_frames = ExtResource("6_d4oux")
 
-[node name="move_right" type="TextureButton" parent="Control" unique_id=494554928]
+[node name="move_right" type="TextureButton" parent="." unique_id=494554928]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -86,7 +82,7 @@ grow_vertical = 0
 scale = Vector2(0.1, 0.1)
 texture_normal = ExtResource("7_f43ms")
 
-[node name="move_left" type="TextureButton" parent="Control" unique_id=32483952]
+[node name="move_left" type="TextureButton" parent="." unique_id=32483952]
 layout_mode = 1
 offset_left = 200.0
 offset_top = 535.0
@@ -96,7 +92,7 @@ scale = Vector2(0.1, 0.1)
 texture_normal = ExtResource("7_f43ms")
 flip_h = true
 
-[node name="desc_bg" type="TextureRect" parent="Control" unique_id=303915952]
+[node name="desc_bg" type="TextureRect" parent="." unique_id=303915952]
 layout_mode = 0
 offset_left = 18.000002
 offset_top = 145.0
@@ -105,7 +101,7 @@ offset_bottom = 602.1428
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("8_sq00v")
 
-[node name="char_name" type="Label" parent="Control" unique_id=27133917]
+[node name="char_name" type="Label" parent="." unique_id=27133917]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -123,7 +119,7 @@ theme_override_font_sizes/font_size = 80
 text = "CHAR NAME HERE"
 horizontal_alignment = 1
 
-[node name="char_desc" type="Label" parent="Control" unique_id=1595484797]
+[node name="char_desc" type="Label" parent="." unique_id=1595484797]
 clip_contents = true
 layout_mode = 1
 anchors_preset = 4
@@ -142,7 +138,7 @@ theme_override_font_sizes/font_size = 22
 text = "CHAR NAME HERE"
 autowrap_mode = 2
 
-[node name="current_char" type="TextureButton" parent="Control" unique_id=1695413518]
+[node name="current_char" type="TextureButton" parent="." unique_id=1695413518]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -158,7 +154,7 @@ grow_vertical = 0
 scale = Vector2(0.35, 0.35)
 texture_normal = ExtResource("10_mtqm2")
 
-[node name="prev_char" type="TextureButton" parent="Control" unique_id=610103045]
+[node name="prev_char" type="TextureButton" parent="." unique_id=610103045]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -174,7 +170,7 @@ grow_vertical = 0
 scale = Vector2(0.25, 0.25)
 texture_normal = ExtResource("11_837ch")
 
-[node name="next_char" type="TextureButton" parent="Control" unique_id=2141360673]
+[node name="next_char" type="TextureButton" parent="." unique_id=2141360673]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -190,7 +186,7 @@ grow_vertical = 0
 scale = Vector2(0.25, 0.25)
 texture_normal = ExtResource("12_pr6dy")
 
-[node name="in_use" type="Label" parent="Control" unique_id=1593380496]
+[node name="in_use" type="Label" parent="." unique_id=1593380496]
 visible = false
 layout_mode = 1
 anchors_preset = 5

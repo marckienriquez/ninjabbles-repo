@@ -44,24 +44,22 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="SplashScreen" type="Node2D" unique_id=1976295679]
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=975227446]
-
-[node name="Control" type="Control" parent="CanvasLayer" unique_id=1304280118]
+[node name="Control" type="Control" unique_id=1304280118]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 1150.0
-offset_bottom = 647.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_tft06")
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control" unique_id=1123010661]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1123010661]
 layout_mode = 0
 offset_right = 1153.0
 offset_bottom = 648.0
 texture = ExtResource("2_0u0qq")
 
-[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Control" unique_id=1900869644]
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1900869644]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -73,7 +71,7 @@ grow_horizontal = 2
 texture = ExtResource("3_f3yud")
 expand_mode = 1
 
-[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/Control" unique_id=1536464959]
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=1536464959]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -88,7 +86,7 @@ grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("4_0u0qq")
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer/Control" unique_id=2068748107]
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=2068748107]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -104,7 +102,7 @@ grow_vertical = 0
 nine_patch_stretch = true
 texture_progress = ExtResource("4_pkvjn")
 
-[node name="Label" type="Label" parent="CanvasLayer/Control" unique_id=1358699732]
+[node name="Label" type="Label" parent="." unique_id=1358699732]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -126,7 +124,7 @@ theme_override_font_sizes/font_size = 40
 text = "DOWNLOADING CONTENTS"
 uppercase = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Control" unique_id=253357964]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=253357964]
 position = Vector2(269, 549)
 scale = Vector2(0.12305296, 0.12305296)
 sprite_frames = SubResource("SpriteFrames_w7qwh")
