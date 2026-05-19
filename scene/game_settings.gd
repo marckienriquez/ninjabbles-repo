@@ -13,13 +13,14 @@ extends Control
 
 
 func _ready():
-	bgmusic_off.visible = false
-	soundmusic_off.visible = false
-
 	bgmusic_off.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	soundmusic_off.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
+	bgmusic_off.visible = !GlobalData.music_enabled
+	soundmusic_off.visible = !GlobalData.soundfx_enabled
+
 	x_btn.pressed.connect(_on_x_pressed)
+
 	bgmusic_on.pressed.connect(_on_bgmusic_on_pressed)
 	soundfx_on.pressed.connect(_on_soundfx_on_pressed)
 
@@ -32,11 +33,13 @@ func _on_x_pressed() -> void:
 
 
 func _on_bgmusic_on_pressed() -> void:
-	bgmusic_off.visible = !bgmusic_off.visible
+	GlobalData.music_enabled = !GlobalData.music_enabled
+	bgmusic_off.visible = !GlobalData.music_enabled
 
 
 func _on_soundfx_on_pressed() -> void:
-	soundmusic_off.visible = !soundmusic_off.visible
+	GlobalData.soundfx_enabled = !GlobalData.soundfx_enabled
+	soundmusic_off.visible = !GlobalData.soundfx_enabled
 
 
 func _on_home_pressed() -> void:
@@ -45,5 +48,3 @@ func _on_home_pressed() -> void:
 
 func _on_replay_pressed() -> void:
 	get_tree().change_scene_to_file("res://scene/easy_screen.tscn")
-	
-	

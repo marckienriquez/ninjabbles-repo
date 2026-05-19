@@ -1,5 +1,8 @@
 extends Node
 
+var music_enabled := true
+var soundfx_enabled := true
+
 # This variable will hold your commands even after the level ends
 var last_run_commands: Array[String] = []
 var full_gameplay_history = [] # All commands used across the level
