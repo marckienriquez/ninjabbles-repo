@@ -49,7 +49,7 @@ func apply_selected_character():
 	else:
 		$AnimatedSprite2D.sprite_frames = character_frames["MIDORI"]
 
-	$AnimatedSprite2D.play("idle")
+	$AnimatedSprite2D.play("default")
 	$AnimatedSprite2D.scale = Vector2(0.16, 0.16)
 
 func run_commands(commands: Array[String]):
@@ -110,6 +110,9 @@ func move_in_direction(dir: Vector2):
 		await get_tree().physics_frame
 
 	velocity.x = 0
+	
+	if is_on_floor():
+		last_safe_position = global_position
 
 var jump_count: int = 0
 
@@ -283,9 +286,10 @@ func _break_vertical_stack(tile_map, hit_pos: Vector2, forward: Vector2):
 			tile_map.erase_cell(0, pos)
 
 func reset_to_last_safe_spot():
+	var avatar_width = $CollisionShape2D.shape.size.x
 	var backward_direction = -1 if right else 1
-	var offset = Vector2(backward_direction * 35, 0)
+	var safe_offset = Vector2(backward_direction * avatar_width, 0)
 
-	global_position = last_safe_position + offset
+	global_position = last_safe_position + safe_offset
 	velocity = Vector2.ZERO
 	is_jumping = false

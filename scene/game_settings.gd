@@ -1,15 +1,17 @@
 extends Control
 
-@onready var x_btn = $x
+@onready var x_btn = $Control/x
 
-@onready var bgmusic_on = $bgmusic_on
-@onready var bgmusic_off = $bgmusic_off
+@onready var bgmusic_on = $Control/bgmusic_on
+@onready var bgmusic_off = $Control/bgmusic_off
 
-@onready var soundfx_on = $soundfx_on
-@onready var soundmusic_off = $soundmusic_off
+@onready var soundfx_on = $Control/soundfx_on
+@onready var soundmusic_off = $Control/soundmusic_off
 
-@onready var home_btn = $Home
-@onready var replay_btn = $Replay
+@onready var home_btn = $Control/Home
+@onready var replay_btn = $Control/Replay
+
+
 
 
 func _ready():

@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cwg8bshx0r06h" path="res://asset/others/sound_icon.png" id="5_m7bev"]
 [ext_resource type="Texture2D" uid="uid://x1bofu5kbj6n" path="res://asset/others/off.png" id="6_wh366"]
 [ext_resource type="Texture2D" uid="uid://dvpihxrg00mpi" path="res://asset/others/back.png" id="7_ipixp"]
+[ext_resource type="Texture2D" uid="uid://cmmlww2dfvalm" path="res://asset/others/replay.png" id="9_we44f"]
 
 [node name="Control" type="Control" unique_id=872096869]
 layout_mode = 3
@@ -27,104 +28,140 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_bto83")
 
-[node name="scroll" type="TextureRect" parent="." unique_id=1664850057]
+[node name="Control" type="Control" parent="." unique_id=824437461]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -354.0
-offset_top = -188.5
-offset_right = 354.0
-offset_bottom = 188.5
+offset_left = -360.0
+offset_top = -190.0
+offset_right = 360.0
+offset_bottom = 190.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="scroll" type="TextureRect" parent="Control" unique_id=1664850057]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_31edn")
 
-[node name="x" type="TextureButton" parent="." unique_id=2058830368]
-layout_mode = 0
-offset_left = 832.00006
-offset_top = 169.00003
-offset_right = 1088.0
-offset_bottom = 425.00003
+[node name="x" type="TextureButton" parent="Control" unique_id=2058830368]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -93.99994
+offset_top = 24.999968
+offset_right = 162.00006
+offset_bottom = 280.99997
+grow_horizontal = 0
 rotation = -0.98611104
 scale = Vector2(0.4, 0.4)
 texture_normal = ExtResource("3_we44f")
 
-[node name="bgmusic_on" type="TextureButton" parent="." unique_id=947881563]
-layout_mode = 0
-offset_left = 450.0
-offset_top = 200.0
-offset_right = 950.0
-offset_bottom = 700.0
-scale = Vector2(0.15, 0.15)
+[node name="bgmusic_on" type="TextureButton" parent="Control" unique_id=947881563]
+layout_mode = 1
+offset_left = 175.0
+offset_top = 60.0
+offset_right = 675.0
+offset_bottom = 560.0
+scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("4_lfc67")
 
-[node name="soundfx_on" type="TextureButton" parent="." unique_id=1185061369]
-layout_mode = 0
-offset_left = 620.0
-offset_top = 200.0
-offset_right = 1120.0
-offset_bottom = 700.0
-scale = Vector2(0.15, 0.15)
+[node name="soundfx_on" type="TextureButton" parent="Control" unique_id=1185061369]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -270.0
+offset_top = 60.0
+offset_right = 230.0
+offset_bottom = 560.0
+grow_horizontal = 0
+scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("5_m7bev")
 
-[node name="bgmusic" type="Label" parent="." unique_id=873870484]
-layout_mode = 0
-offset_left = 416.0
-offset_top = 280.0
-offset_right = 559.0
-offset_bottom = 303.0
+[node name="bgmusic" type="Label" parent="Control" unique_id=873870484]
+layout_mode = 1
+offset_left = 142.0
+offset_top = 160.0
+offset_right = 320.0
+offset_bottom = 188.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 20
 text = "Background Music"
 
-[node name="SoundFX" type="Label" parent="." unique_id=1632672760]
-layout_mode = 0
-offset_left = 624.0
-offset_top = 280.0
-offset_right = 696.0
-offset_bottom = 303.0
+[node name="SoundFX" type="Label" parent="Control" unique_id=1632672760]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -263.0
+offset_top = 160.0
+offset_right = -173.0
+offset_bottom = 188.0
+grow_horizontal = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 20
 text = "Sound FX"
 
-[node name="bgmusic_off" type="TextureButton" parent="." unique_id=1250259909]
-layout_mode = 0
-offset_left = 453.0
-offset_top = 200.0
-offset_right = 978.0
-offset_bottom = 725.0
-scale = Vector2(0.15, 0.15)
+[node name="bgmusic_off" type="TextureButton" parent="Control" unique_id=1250259909]
+layout_mode = 1
+offset_left = 175.0
+offset_top = 58.0
+offset_right = 700.0
+offset_bottom = 583.0
+scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("6_wh366")
 
-[node name="soundmusic_off" type="TextureButton" parent="." unique_id=131259412]
-layout_mode = 0
-offset_left = 620.0
-offset_top = 200.0
-offset_right = 1145.0
-offset_bottom = 725.0
-scale = Vector2(0.15, 0.15)
+[node name="soundmusic_off" type="TextureButton" parent="Control" unique_id=131259412]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -270.0
+offset_top = 60.0
+offset_right = 255.0
+offset_bottom = 585.0
+grow_horizontal = 0
+scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("6_wh366")
 
-[node name="Home" type="TextureButton" parent="." unique_id=895002206]
-layout_mode = 0
-offset_left = 286.0
-offset_top = 335.0
-offset_right = 1028.0
-offset_bottom = 691.0
-scale = Vector2(0.4, 0.4)
+[node name="Home" type="TextureButton" parent="Control" unique_id=895002206]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 88.999985
+offset_top = -185.0
+offset_right = 409.0
+offset_bottom = 4.0
+grow_vertical = 0
+scale = Vector2(0.8, 0.8)
 texture_normal = ExtResource("7_ipixp")
 
-[node name="Replay" type="TextureButton" parent="." unique_id=2142200401]
-layout_mode = 0
-offset_left = 567.00006
-offset_top = 335.0
-offset_right = 1309.0001
-offset_bottom = 691.0
-scale = Vector2(0.4, 0.4)
-texture_normal = ExtResource("7_ipixp")
-flip_h = true
+[node name="Replay" type="TextureButton" parent="Control" unique_id=2142200401]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -324.0
+offset_top = -185.0
+offset_right = -4.0
+offset_bottom = 4.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.8, 0.8)
+texture_normal = ExtResource("9_we44f")

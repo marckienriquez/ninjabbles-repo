@@ -96,8 +96,8 @@ func update_character():
 
 	big_sprite.sprite_frames = selected["frames"]
 
-	if big_sprite.animation != "idle":
-		big_sprite.play("idle")
+	if big_sprite.animation != "default":
+		big_sprite.play("default")
 	else:
 		big_sprite.play()
 

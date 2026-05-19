@@ -26,85 +26,116 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_0i26l")
 
-[node name="scroll" type="TextureRect" parent="." unique_id=1664850057]
+[node name="Control" type="Control" parent="." unique_id=1259834138]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -225.18518
-offset_top = -81.0
-offset_right = 225.18518
-offset_bottom = 81.0
+offset_left = -240.0
+offset_top = -85.0
+offset_right = 240.0
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="scroll" type="TextureRect" parent="Control" unique_id=1664850057]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_2ihvv")
 
-[node name="x" type="TextureButton" parent="." unique_id=2058830368]
-layout_mode = 0
-offset_left = 719.00006
-offset_top = 267.0
-offset_right = 975.00006
-offset_bottom = 523.0
+[node name="x" type="TextureButton" parent="Control" unique_id=2058830368]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -91.0
+offset_top = 19.999998
+offset_right = 165.0
+offset_bottom = 276.0
+grow_horizontal = 0
 rotation = -0.98611104
 scale = Vector2(0.4, 0.4)
 texture_normal = ExtResource("3_blbhf")
 
-[node name="bgmusic_on" type="TextureButton" parent="." unique_id=947881563]
-layout_mode = 0
-offset_left = 450.0
-offset_top = 280.0
-offset_right = 950.0
-offset_bottom = 780.0
-scale = Vector2(0.15, 0.15)
+[node name="bgmusic_on" type="TextureButton" parent="Control" unique_id=947881563]
+layout_mode = 1
+offset_left = 100.0
+offset_top = 30.0
+offset_right = 600.0
+offset_bottom = 530.0
+scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("4_a0inw")
 
-[node name="soundfx_on" type="TextureButton" parent="." unique_id=1185061369]
-layout_mode = 0
-offset_left = 620.0
-offset_top = 280.0
-offset_right = 1120.0
-offset_bottom = 780.0
-scale = Vector2(0.15, 0.15)
+[node name="soundfx_on" type="TextureButton" parent="Control" unique_id=1185061369]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -180.0
+offset_top = 30.0
+offset_right = 320.0
+offset_bottom = 535.0
+grow_horizontal = 0
+scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("5_lyu1p")
 
-[node name="bgmusic" type="Label" parent="." unique_id=873870484]
-layout_mode = 0
-offset_left = 416.0
-offset_top = 356.0
-offset_right = 559.0
-offset_bottom = 379.0
+[node name="bgmusic" type="Label" parent="Control" unique_id=873870484]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 94.0
+offset_top = -40.0
+offset_right = 237.0
+offset_bottom = -17.0
+grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 3
 text = "Background Music"
 
-[node name="SoundFX" type="Label" parent="." unique_id=1632672760]
-layout_mode = 0
-offset_left = 624.0
-offset_top = 356.0
-offset_right = 696.0
-offset_bottom = 379.0
+[node name="SoundFX" type="Label" parent="Control" unique_id=1632672760]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -164.0
+offset_top = -40.0
+offset_right = -92.0
+offset_bottom = -17.0
+grow_horizontal = 0
+grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 3
 text = "Sound FX"
 
-[node name="bgmusic_off" type="TextureButton" parent="." unique_id=1250259909]
-layout_mode = 0
-offset_left = 453.00003
-offset_top = 276.0
-offset_right = 978.0
-offset_bottom = 801.0
-scale = Vector2(0.15, 0.15)
+[node name="bgmusic_off" type="TextureButton" parent="Control" unique_id=1250259909]
+layout_mode = 1
+offset_left = 100.0
+offset_top = 30.0
+offset_right = 625.0
+offset_bottom = 555.0
+scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("6_1p8ik")
 
-[node name="soundmusic_off" type="TextureButton" parent="." unique_id=131259412]
-layout_mode = 0
-offset_left = 620.0
-offset_top = 280.0
-offset_right = 1120.0
-offset_bottom = 780.0
-scale = Vector2(0.15, 0.15)
+[node name="soundmusic_off" type="TextureButton" parent="Control" unique_id=131259412]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -180.0
+offset_top = 30.0
+offset_right = 345.0
+offset_bottom = 555.0
+grow_horizontal = 0
+scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("6_1p8ik")

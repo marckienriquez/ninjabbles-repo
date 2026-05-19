@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://0f847n4gb7al" path="res://scripts/instruction_screen.gd" id="1_rd28n"]
 [ext_resource type="Texture2D" uid="uid://b4pah4pn21m5e" path="res://asset/others/Group 11.png" id="2_6ig1w"]
 [ext_resource type="Texture2D" uid="uid://cr0jb67no34fd" path="res://asset/others/arrow.png" id="2_drjvt"]
+[ext_resource type="Texture2D" uid="uid://bckdrtlf6hho0" path="res://asset/others/shadow_backdroup.png" id="2_ye5s0"]
 [ext_resource type="Texture2D" uid="uid://cw7jqa5fid72l" path="res://asset/others/shuriken.png" id="3_77s36"]
 [ext_resource type="FontFile" uid="uid://3qsftis2m7nf" path="res://asset/PixelifySans-VariableFont_wght.ttf" id="3_vsjng"]
 [ext_resource type="Texture2D" uid="uid://btfdqj8fdlqvh" path="res://asset/others/char.png" id="4_vsjng"]
@@ -21,6 +22,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rd28n")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2087641485]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ye5s0")
 
 [node name="scroll" type="TextureRect" parent="." unique_id=1015370918]
 layout_mode = 1
