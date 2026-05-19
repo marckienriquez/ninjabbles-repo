@@ -34,7 +34,7 @@ var last_safe_position: Vector2
 
 const FALL_THRESHOLD = 200.0
 const SPEED = 200.0
-const JUMP_VELOCITY = -300.0
+const JUMP_VELOCITY = -250.0
 
 func _ready():
 	add_to_group("character")
@@ -146,7 +146,7 @@ func climb():
 		var ladder_top_y = current_ladder.global_position.y - current_ladder.ladder_height / 2.0
 		var character_half_height = $CollisionShape2D.shape.size.y / 2.0
 
-		while global_position.y - character_half_height > ladder_top_y:
+		while global_position.y - (character_half_height + 4) > ladder_top_y:
 			global_position.y -= 2
 			await get_tree().process_frame
 
@@ -194,7 +194,6 @@ func _physics_process(delta: float) -> void:
 
 func slide():
 	play_sfx(sfx_slide)
-
 	var forward = Vector2.RIGHT if right else Vector2.LEFT
 	var slide_distance := 100.0
 	var slide_speed := 180.0
@@ -202,28 +201,46 @@ func slide():
 
 	var original_size = $CollisionShape2D.shape.size
 	$CollisionShape2D.shape.size.y = original_size.y / 2
-	position.y += original_size.y / 4
+	$CollisionShape2D.position.y += original_size.y / 4 
 
-	while moved < slide_distance:
+	# Change: The loop now keeps running if we are still under a ceiling!
+	while moved < slide_distance or is_under_ceiling():
+		await get_tree().physics_frame
+		
 		var delta := get_physics_process_delta_time()
 		var step := slide_speed * delta
 
-		if moved + step > slide_distance:
-			step = slide_distance - moved
+		# Only track the slide distance limit while we haven't reached it
+		if moved < slide_distance:
+			if moved + step > slide_distance:
+				step = slide_distance - moved
+			moved += step
 
 		velocity.x = forward.x * slide_speed
 		move_and_slide()
 
 		if is_on_wall():
 			break
-
-		moved += step
-		await get_tree().physics_frame
-
+		
 	velocity.x = 0
-
 	$CollisionShape2D.shape.size = original_size
-	position.y -= original_size.y / 4
+	$CollisionShape2D.position.y -= original_size.y / 4
+
+# Helper function to cast a quick ray upwards and see if the ceiling is clear
+func is_under_ceiling() -> bool:
+	var space_state = get_world_2d().direct_space_state
+	
+	# Casts a ray from the avatar's center straight up by 25 pixels
+	# Adjust the -25 up or down depending on how tall your full character is
+	var query = PhysicsRayQueryParameters2D.create(
+		global_position, 
+		global_position + Vector2(0, -25), 
+		1 # Assumes your TileMap environment is on Collision Layer 1
+	)
+	query.exclude = [get_rid()] # Don't clip against yourself
+	
+	var result = space_state.intersect_ray(query)
+	return not result.is_empty() # Returns true if a tile is detected above
 
 func punch():
 	play_sfx(sfx_punch)
