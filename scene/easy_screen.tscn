@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://bmx1scorbmo76" path="res://asset/others/scroll-timer.png" id="11_ivbv5"]
 [ext_resource type="Script" uid="uid://hubdrtesio54" path="res://scripts/timer.gd" id="12_jjpml"]
 [ext_resource type="AudioStream" uid="uid://dt4heuw6bmix0" path="res://music/aud_easy.mp3" id="19_c48df"]
+[ext_resource type="Texture2D" uid="uid://y4qv1jch2yfu" path="res://asset/others/furui.png" id="19_opevt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gm46g"]
 texture = ExtResource("2_iwwbg")
@@ -419,6 +420,14 @@ text = "RETRY"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
+
+[node name="settings" type="TextureButton" parent="CanvasLayer" unique_id=1597374381]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 302.0
+offset_bottom = 320.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("19_opevt")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1209496841]
 stream = ExtResource("19_c48df")
