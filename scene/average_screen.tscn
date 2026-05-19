@@ -22,7 +22,7 @@
 [ext_resource type="FontFile" uid="uid://3qsftis2m7nf" path="res://asset/PixelifySans-VariableFont_wght.ttf" id="13_jnqrk"]
 [ext_resource type="Script" uid="uid://hubdrtesio54" path="res://scripts/timer.gd" id="14_4hgsv"]
 [ext_resource type="Texture2D" uid="uid://bmx1scorbmo76" path="res://asset/others/scroll-timer.png" id="15_ww6gl"]
-[ext_resource type="Texture2D" uid="uid://y4qv1jch2yfu" path="res://asset/others/furui.png" id="22_cm5sm"]
+[ext_resource type="Texture2D" uid="uid://b4db7asq1cqss" path="res://asset/others/settings.png" id="22_cm5sm"]
 [ext_resource type="AudioStream" uid="uid://dchqrj003eqg" path="res://music/aud_average.mp3" id="23_3il77"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0hyr4"]

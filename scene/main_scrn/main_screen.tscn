@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://iu4c1qpktchy" path="res://asset/others/how_to_play.png" id="6_uscv1"]
 [ext_resource type="FontFile" uid="uid://3qsftis2m7nf" path="res://asset/PixelifySans-VariableFont_wght.ttf" id="7_6hfqq"]
 [ext_resource type="AudioStream" uid="uid://rkm68fbh4fs6" path="res://music/aud_main.mp3" id="7_d0jji"]
-[ext_resource type="Texture2D" uid="uid://btfdqj8fdlqvh" path="res://asset/others/char.png" id="9_uscv1"]
+[ext_resource type="Texture2D" uid="uid://b4db7asq1cqss" path="res://asset/others/settings.png" id="9_uscv1"]
 
 [node name="Main Screen" type="Control" unique_id=1499982049]
 layout_mode = 3

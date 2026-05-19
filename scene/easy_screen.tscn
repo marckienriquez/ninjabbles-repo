@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://bmx1scorbmo76" path="res://asset/others/scroll-timer.png" id="11_ivbv5"]
 [ext_resource type="Script" uid="uid://hubdrtesio54" path="res://scripts/timer.gd" id="12_jjpml"]
 [ext_resource type="AudioStream" uid="uid://dt4heuw6bmix0" path="res://music/aud_easy.mp3" id="19_c48df"]
-[ext_resource type="Texture2D" uid="uid://y4qv1jch2yfu" path="res://asset/others/furui.png" id="19_opevt"]
+[ext_resource type="Texture2D" uid="uid://b4db7asq1cqss" path="res://asset/others/settings.png" id="19_opevt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gm46g"]
 texture = ExtResource("2_iwwbg")
