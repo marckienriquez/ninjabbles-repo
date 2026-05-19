@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://w6ju4me3dphe" path="res://scene/ladder.tscn.tscn" id="13_efj10"]
 [ext_resource type="Script" uid="uid://hubdrtesio54" path="res://scripts/timer.gd" id="14_pm4ap"]
 [ext_resource type="Texture2D" uid="uid://bmx1scorbmo76" path="res://asset/others/scroll-timer.png" id="15_tgv2f"]
+[ext_resource type="Texture2D" uid="uid://b4db7asq1cqss" path="res://asset/others/settings.png" id="22_87sjf"]
 [ext_resource type="AudioStream" uid="uid://rodvpnfmyaul" path="res://music/aud_hard.mp3" id="23_aw72e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0hyr4"]
@@ -610,6 +611,14 @@ text = "clear"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
+
+[node name="settings" type="TextureButton" parent="CanvasLayer" unique_id=650483984]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 390.0
+offset_bottom = 390.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("22_87sjf")
 
 [node name="Ladder_tscn" parent="." unique_id=841041022 instance=ExtResource("13_efj10")]
 position = Vector2(89, -8)

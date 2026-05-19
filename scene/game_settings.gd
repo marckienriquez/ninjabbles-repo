@@ -49,4 +49,5 @@ func _on_home_pressed() -> void:
 
 
 func _on_replay_pressed() -> void:
-	get_tree().change_scene_to_file("res://scene/easy_screen.tscn")
+	var current_scene = get_tree().current_scene.scene_file_path
+	get_tree().change_scene_to_file(current_scene)
