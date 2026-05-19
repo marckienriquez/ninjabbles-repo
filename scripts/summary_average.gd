@@ -1,13 +1,23 @@
 extends Control
 
 # This path must match your scene tree exactly 
-@onready var code_label = $VBoxContainer/CodeLabel 
+@onready var code_label = $VBoxContainer/CodeLabel
+@onready var timeElapsed = $TimerTexture/timeElapsed
 
 func _ready():
 	# We leave this empty or use it to hide the screen initially
 	visible = false
 
 func display_code():
+	var timer_panel = get_node("../../TimerPanel") 
+	
+	if timer_panel and timeElapsed:
+		# Read the saved variable we just created instead of the dead timer
+		var time_left = timer_panel.final_time_saved
+		var calculated_time = 150 - time_left
+		
+		timeElapsed.text = str(snappedf(calculated_time, 0.1)) + "s"
+
 	# 1. Pull the full list of commands used
 	var all_commands = GlobalData.full_gameplay_history
 	

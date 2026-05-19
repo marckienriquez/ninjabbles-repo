@@ -340,15 +340,9 @@ autowrap_mode = 2
 
 [node name="TimerPanel" type="Panel" parent="CanvasLayer" unique_id=1334587516]
 visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -576.0
-offset_top = -324.0
-offset_right = 576.0
-offset_bottom = 323.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -360,9 +354,9 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -152.0
+offset_left = -169.0
 offset_top = 10.0
-offset_right = 7.0
+offset_right = -10.0
 offset_bottom = 81.0
 grow_horizontal = 0
 texture = ExtResource("15_ww6gl")
@@ -387,7 +381,7 @@ theme_override_font_sizes/font_size = 50
 text = "00:25"
 
 [node name="Timer" type="Timer" parent="CanvasLayer/TimerPanel/TimerTexture/Label" unique_id=1023875439]
-wait_time = 240.0
+wait_time = 150.0
 one_shot = true
 
 [node name="RetryButton" type="Button" parent="CanvasLayer/TimerPanel" unique_id=1596945264]
