@@ -19,6 +19,7 @@ var character_frames = {
 @export var sfx_punch: AudioStream
 @export var sfx_dead: AudioStream
 
+var should_stop_commands: bool = false
 var right: bool = true:
 	set(value):
 		right = value
@@ -53,7 +54,11 @@ func apply_selected_character():
 	$AnimatedSprite2D.scale = Vector2(0.16, 0.16)
 
 func run_commands(commands: Array[String]):
+	should_stop_commands = false
+
 	for command in commands:
+		if should_stop_commands:
+			break
 		await execute_command(command)
 
 func execute_command(command: String):
@@ -117,6 +122,9 @@ func move_in_direction(dir: Vector2):
 var jump_count: int = 0
 
 func jump():
+	if is_on_floor():
+		last_safe_position = global_position
+		
 	play_sfx(sfx_jump)
 	jump_count += 1
 	var current_jump_id = jump_count
@@ -137,6 +145,7 @@ func jump():
 	if current_jump_id == jump_count:
 		velocity.x = 0
 		is_jumping = false
+		
 
 signal character_clicked
 
@@ -295,3 +304,5 @@ func reset_to_last_safe_spot():
 	global_position = last_safe_position + safe_offset
 	velocity = Vector2.ZERO
 	is_jumping = false
+	should_stop_commands = true
+	
