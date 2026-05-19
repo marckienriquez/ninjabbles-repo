@@ -47,36 +47,28 @@ texture = ExtResource("3_5m43v")
 
 [node name="Back" type="TextureButton" parent="." unique_id=1981358304]
 clip_contents = true
-layout_mode = 1
-offset_left = 20.0
-offset_top = 20.0
-offset_right = 340.0
-offset_bottom = 209.0
-scale = Vector2(0.5, 0.5)
+layout_mode = 0
+offset_left = 6.0
+offset_top = 32.999996
+offset_right = 748.0
+offset_bottom = 389.0
+scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("4_lkekb")
 
 [node name="Play" type="TextureButton" parent="." unique_id=160264536]
 clip_contents = true
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -224.99994
-offset_top = -297.0
-offset_right = 517.0
-offset_bottom = 198.0
-grow_horizontal = 0
-grow_vertical = 0
-scale = Vector2(0.3, 0.3)
+layout_mode = 0
+offset_left = 965.0
+offset_top = 370.0
+offset_right = 1707.0
+offset_bottom = 865.0
+scale = Vector2(0.25, 0.25)
 texture_normal = ExtResource("5_i3lkr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1316913517]
 position = Vector2(683, 298.00003)
 scale = Vector2(1.2424998, 1.2424998)
 sprite_frames = ExtResource("6_d4oux")
-frame_progress = 0.1365591
 
 [node name="move_right" type="TextureButton" parent="." unique_id=494554928]
 clip_contents = true
@@ -221,10 +213,6 @@ horizontal_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1108544084]
 stream = ExtResource("13_oo4xk")
-<<<<<<< HEAD
-volume_db = -10.0
-=======
 volume_db = 9.0
 autoplay = true
 parameters/looping = true
->>>>>>> origin/marc-branch
