@@ -33,12 +33,12 @@ func _on_x_pressed() -> void:
 
 
 func _on_bgmusic_on_pressed() -> void:
-	GlobalData.music_enabled = !GlobalData.music_enabled
+	GlobalData.set_music_enabled(!GlobalData.music_enabled)
 	bgmusic_off.visible = !GlobalData.music_enabled
 
 
 func _on_soundfx_on_pressed() -> void:
-	GlobalData.soundfx_enabled = !GlobalData.soundfx_enabled
+	GlobalData.set_soundfx_enabled(!GlobalData.soundfx_enabled)
 	soundmusic_off.visible = !GlobalData.soundfx_enabled
 
 

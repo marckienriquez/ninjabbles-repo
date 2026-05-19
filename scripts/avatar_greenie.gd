@@ -76,6 +76,8 @@ func execute_command(command: String):
 			await punch()
 
 func play_sfx(stream: AudioStream):
+	if not GlobalData.soundfx_enabled:
+		return
 	if stream and sfx_player:
 		sfx_player.stream = stream
 		sfx_player.play()

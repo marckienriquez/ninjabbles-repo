@@ -22,6 +22,7 @@
 [ext_resource type="FontFile" uid="uid://3qsftis2m7nf" path="res://asset/PixelifySans-VariableFont_wght.ttf" id="13_jnqrk"]
 [ext_resource type="Script" uid="uid://hubdrtesio54" path="res://scripts/timer.gd" id="14_4hgsv"]
 [ext_resource type="Texture2D" uid="uid://bmx1scorbmo76" path="res://asset/others/scroll-timer.png" id="15_ww6gl"]
+[ext_resource type="Texture2D" uid="uid://y4qv1jch2yfu" path="res://asset/others/furui.png" id="22_cm5sm"]
 [ext_resource type="AudioStream" uid="uid://dchqrj003eqg" path="res://music/aud_average.mp3" id="23_3il77"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0hyr4"]
@@ -591,6 +592,14 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
+[node name="settings" type="TextureButton" parent="CanvasLayer" unique_id=749326856]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 302.0
+offset_bottom = 320.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("22_cm5sm")
+
 [node name="Ladder_tscn" parent="." unique_id=1311348962 instance=ExtResource("11_1ivf0")]
 position = Vector2(120, -8)
 
@@ -651,4 +660,3 @@ position = Vector2(520, -216)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1140065176]
 stream = ExtResource("23_3il77")
 volume_db = -10.0
-autoplay = true

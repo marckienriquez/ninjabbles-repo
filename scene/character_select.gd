@@ -56,6 +56,12 @@ var characters = [
 ]
 
 func _ready():
+	
+	if GlobalData.music_enabled:
+		$AudioStreamPlayer.play()
+	else:
+		$AudioStreamPlayer.stop()
+		
 	move_right.pressed.connect(_on_move_right_pressed)
 	move_left.pressed.connect(_on_move_left_pressed)
 

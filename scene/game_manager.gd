@@ -8,12 +8,30 @@ const game_settings_scene = preload("res://scene/game_settings.tscn")
 
 
 func _ready():
+	if GlobalData.music_enabled:
+		$AudioStreamPlayer.play()
+	else:
+		$AudioStreamPlayer.stop()
+	
 	$avatar_greenie.connect("character_clicked", self._on_character_clicked)
 	$CanvasLayer/BlockEditor/CloseEditorButton.connect("pressed", self._on_button_pressed)
 	$CanvasLayer/BlockEditor/RunButton.connect("pressed", self._on_button_pressed)
 	$CanvasLayer/Instructions/InstructionsTexture/CloseInstructionsButton.connect("pressed", self._on_instructions_button_pressed)
 	$CanvasLayer/Summary/summary_screen/CloseSummaryButton.connect("pressed", self._on_summary_button_pressed)
 	$CanvasLayer/settings.pressed.connect(_on_settings_pressed)
+	
+	GlobalData.music_setting_changed.connect(_on_music_setting_changed)
+	_apply_music_setting()
+
+func _apply_music_setting():
+	if GlobalData.music_enabled:
+		if not $AudioStreamPlayer.playing:
+			$AudioStreamPlayer.play()
+	else:
+		$AudioStreamPlayer.stop()
+
+func _on_music_setting_changed(enabled: bool):
+	_apply_music_setting()
 
 func _on_settings_pressed() -> void:
 	var settings_popup = game_settings_scene.instantiate()
