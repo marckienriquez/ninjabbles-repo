@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://iu4c1qpktchy" path="res://asset/others/how_to_play.png" id="6_uscv1"]
 [ext_resource type="FontFile" uid="uid://3qsftis2m7nf" path="res://asset/PixelifySans-VariableFont_wght.ttf" id="7_6hfqq"]
 [ext_resource type="AudioStream" uid="uid://rkm68fbh4fs6" path="res://music/aud_main.mp3" id="7_d0jji"]
+[ext_resource type="Texture2D" uid="uid://btfdqj8fdlqvh" path="res://asset/others/char.png" id="9_uscv1"]
 
 [node name="Main Screen" type="Control" unique_id=1499982049]
 layout_mode = 3
@@ -121,5 +122,40 @@ stream = ExtResource("7_d0jji")
 volume_db = -10.0
 autoplay = true
 
+[node name="settings" type="TextureButton" parent="." unique_id=563026568]
+layout_mode = 1
+offset_left = 35.0
+offset_top = 12.0
+offset_right = 100.0
+offset_bottom = 83.0
+action_mode = 0
+texture_normal = ExtResource("9_uscv1")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="settings" unique_id=968504294]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -69.5
+offset_top = 35.5
+offset_right = 74.5
+offset_bottom = 65.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("7_6hfqq")
+theme_override_font_sizes/font_size = 20
+text = "SETTINGS"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
 [connection signal="pressed" from="start_btn" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="instr_btn" to="." method="_on_instr_btn_pressed"]
+[connection signal="pressed" from="settings" to="." method="_on_settings_pressed"]
