@@ -37,7 +37,7 @@ var characters = [
 	},
 	{
 		"name": "MURASAKI",
-		"desc": "Murasaki is a female, born on the 19th day of February. Pisces. Possesses the natural ability to lead the group with her rational mind. Calm and open-minded, always acknowledging every member’s opinion.",
+		"desc": "Murasaki is a female, born on the 19th day of February. Pisces. Possesses the natural ability to lead the group with her rational mind. Calm, level-headed, and open-minded, always acknowledging every member’s opinion.",
 		"frames": preload("res://asset/sprites/murasaki_idle.tres"),
 		"icon": preload("res://asset/others/murasaki.png")
 	},

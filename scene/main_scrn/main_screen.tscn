@@ -120,6 +120,7 @@ uppercase = true
 stream = ExtResource("7_d0jji")
 volume_db = -10.0
 autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="start_btn" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="instr_btn" to="." method="_on_instr_btn_pressed"]
