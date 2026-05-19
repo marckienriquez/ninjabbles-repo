@@ -172,28 +172,30 @@ func _input_event(viewport, event, shape_idx):
 			character_clicked.emit()
 
 func _physics_process(delta: float) -> void:
-	if is_climbing:
+	# 1. If we are actively climbing OR just hanging on a ladder, freeze manual physics!
+	if is_climbing or on_ladder:
 		velocity = Vector2.ZERO
 		move_and_slide()
 		return
 
 	if is_on_floor() and not is_jumping:
-		last_safe_position = global_position
+		last_safe_position = global_position 
 
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		velocity += get_gravity() * delta 
 
 	if global_position.y > FALL_THRESHOLD:
-		play_sfx(sfx_dead)
-		reset_to_last_safe_spot()
+		play_sfx(sfx_dead) 
+		reset_to_last_safe_spot() 
 
+	# 2. Free movement and jumping are only processed if we aren't near a ladder
 	if not is_jumping:
-		var direction := Input.get_axis("ui_left", "ui_right")
+		var direction := Input.get_axis("ui_left", "ui_right") 
 
 		if direction:
-			velocity.x = direction * SPEED
+			velocity.x = direction * SPEED 
 		else:
-			velocity.x = move_toward(velocity.x, 0, SPEED)
+			velocity.x = move_toward(velocity.x, 0, SPEED) 
 
 	move_and_slide()
 

@@ -12,7 +12,13 @@
 [ext_resource type="Texture2D" uid="uid://bdkngp3ixb4x8" path="res://asset/others/instr.png" id="7_ye5s0"]
 [ext_resource type="Texture2D" uid="uid://cqswdonv4u6cb" path="res://asset/others/timer.png" id="8_lfcip"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lfcip"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1dxxc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ye5s0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rd28n"]
 
 [node name="Instruction Screen" type="Control" unique_id=1185626723]
 layout_mode = 3
@@ -74,6 +80,7 @@ flip_h = true
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_lfcip")
 current_tab = 0
 tabs_visible = false
 
@@ -211,6 +218,8 @@ offset_top = -30.0
 offset_right = 943.0
 offset_bottom = 65.83333
 theme_override_styles/normal = SubResource("StyleBoxEmpty_1dxxc")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ye5s0")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rd28n")
 icon = ExtResource("3_77s36")
 expand_icon = true
 

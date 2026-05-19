@@ -121,6 +121,7 @@ uppercase = true
 stream = ExtResource("7_d0jji")
 volume_db = -10.0
 autoplay = true
+parameters/looping = true
 
 [node name="settings" type="TextureButton" parent="." unique_id=563026568]
 layout_mode = 1

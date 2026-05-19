@@ -139,9 +139,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 75.0
+offset_left = 79.0
 offset_top = -136.0
-offset_right = 422.0
+offset_right = 417.0
 offset_bottom = 113.0
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -150,6 +150,7 @@ theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("9_xc1ki")
 theme_override_font_sizes/font_size = 22
 text = "CHAR NAME HERE"
+horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="current_char" type="TextureButton" parent="." unique_id=1695413518]
@@ -220,4 +221,10 @@ horizontal_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1108544084]
 stream = ExtResource("13_oo4xk")
+<<<<<<< HEAD
 volume_db = -10.0
+=======
+volume_db = 9.0
+autoplay = true
+parameters/looping = true
+>>>>>>> origin/marc-branch
